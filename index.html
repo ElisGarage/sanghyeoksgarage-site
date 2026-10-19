@@ -1,0 +1,1460 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="icon" href="data:," />
+    <title>Sanghyeok’s 차고 (Eli's Garage) — Korea's Forgotten Supercar Merch</title>
+    <meta name="description" content="Sanghyeok’s 차고 (Eli's Garage) merch: tees, posters, stickers, diecast, phone cases, and license plate frames celebrating the Oullim Spirra — Korea's forgotten supercar. Every purchase funds The Hunt: the 1-of-1 CREGiT Spirra, Daegu to Houston." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #0a0a0b;
+        --bg-2: #101012;
+        --panel: #161618;
+        --panel-line: #26262a;
+        --ink: #f4f2ec;
+        --ink-2: #b9b6ad;
+        --ink-3: #8a877e;
+        --accent: #fac814;
+        --accent-ink: #141310;
+        --shirt: radial-gradient(120% 90% at 50% 0%, #2a2a2e 0%, #17171a 55%, #101013 100%);
+        --hero-bg: #0a0a0b;
+        --shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+      }
+      @media (prefers-color-scheme: light) {
+        :root {
+          color-scheme: light;
+          --bg: #f2f0ea;
+          --bg-2: #e9e6dd;
+          --panel: #ffffff;
+          --panel-line: #ddd8ca;
+          --ink: #16150f;
+          --ink-2: #4c4a42;
+          --ink-3: #77736a;
+          --shadow: 0 18px 40px rgba(30, 28, 10, 0.14);
+        }
+      }
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: "Barlow", system-ui, sans-serif;
+        font-size: 17px;
+        line-height: 1.55;
+        -webkit-font-smoothing: antialiased;
+      }
+      img { display: block; max-width: 100%; }
+      a { color: inherit; }
+      .wrap { max-width: 1180px; margin: 0 auto; padding: 0 20px; }
+
+      .cond { font-family: "Barlow Condensed", "Barlow", sans-serif; }
+      .display { font-family: "Anton", "Barlow Condensed", sans-serif; letter-spacing: 0.01em; }
+
+      /* ---------- top bar ---------- */
+      .topbar {
+        position: sticky; top: 0; z-index: 40;
+        background: color-mix(in srgb, var(--bg) 88%, transparent);
+        backdrop-filter: blur(10px);
+      }
+      .topbar .wrap { display: flex; align-items: center; gap: 14px 22px; min-height: 58px; padding-top: 8px; padding-bottom: 8px; flex-wrap: wrap; }
+      .wordmark { font-family: "Anton", sans-serif; font-size: 17px; letter-spacing: 0.02em; text-decoration: none; line-height: 1.2; }
+      .wordmark span { color: var(--accent); }
+      @media (prefers-color-scheme: light) { .wordmark span { color: #9a7b00; } }
+      .topnav { display: flex; gap: 20px; margin-left: auto; flex-wrap: wrap; align-items: center; }
+      .cart-btn {
+        display: inline-flex; align-items: center; gap: 8px;
+        font-family: "Barlow Condensed", sans-serif; font-weight: 700; font-size: 16px;
+        letter-spacing: 0.12em; text-transform: uppercase;
+        background: transparent; color: var(--ink); border: 2px solid var(--ink);
+        padding: 6px 14px; border-radius: 6px; cursor: pointer; white-space: nowrap;
+      }
+      .cart-btn:hover { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+      .cart-count {
+        background: var(--accent); color: var(--accent-ink); border-radius: 999px;
+        min-width: 22px; height: 22px; padding: 0 6px;
+        display: inline-flex; align-items: center; justify-content: center;
+        font-size: 14px; font-weight: 700; line-height: 1;
+      }
+      .cart-btn:hover .cart-count { background: var(--accent-ink); color: var(--accent); }
+      .topnav a {
+        font-family: "Barlow Condensed", sans-serif; font-weight: 600; font-size: 16px;
+        letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; color: var(--ink-2);
+      }
+      .topnav a:hover { color: var(--accent); }
+      .topnav a.yt { color: var(--accent); }
+      @media (max-width: 560px) { .topnav a:not(.yt) { display: none; } }
+
+      /* ---------- car tabs + views ---------- */
+      .tabbar {
+        border-top: 1px solid var(--panel-line);
+        border-bottom: 2px solid var(--accent);
+      }
+      .tabbar .wrap { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; padding-top: 8px; padding-bottom: 8px; }
+      .tabbar .wrap::-webkit-scrollbar { display: none; }
+      .tab-btn {
+        flex: 1 0 auto; background: transparent; color: var(--ink-2);
+        border: 1.5px solid var(--panel-line); border-radius: 8px;
+        padding: 10px 16px; cursor: pointer; white-space: nowrap;
+        font-family: "Barlow Condensed", sans-serif; font-weight: 700; font-size: 17px;
+        letter-spacing: 0.12em; text-transform: uppercase;
+      }
+      .tab-btn:hover { border-color: var(--accent); color: var(--ink); }
+      .tab-btn.active { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+      .view { display: none; }
+      .view.active { display: block; }
+      @media (prefers-reduced-motion: reduce) { .view { scroll-behavior: auto; } }
+
+      /* ---------- view hero (the car's photo leading each car tab) ---------- */
+      .view-hero { margin: 0 0 28px; border-radius: 14px; overflow: hidden; border: 1px solid var(--panel-line); background: #0d0d0f; }
+      .view-hero img { display: block; width: 100%; height: clamp(210px, 40vw, 440px); object-fit: cover; }
+
+      /* ---------- meet eli (home intro) ---------- */
+      .meet { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 34px; align-items: start; }
+      @media (max-width: 820px) { .meet { grid-template-columns: 1fr; } }
+      .meet p { color: var(--ink-2); margin: 0 0 16px; font-size: 18px; }
+      .meet p strong { color: var(--ink); }
+      .meet .fact { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 13px 20px; border-bottom: 1px solid var(--panel-line); }
+      .eli-facts { border: 1px solid var(--panel-line); border-radius: 14px; overflow: hidden; background: var(--panel); }
+      .eli-facts .fact:last-child { border-bottom: 0; }
+      .eli-facts .k { font-family: "Barlow Condensed", sans-serif; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; font-size: 17px; }
+      .eli-facts .v { font-family: "Barlow Condensed", sans-serif; font-weight: 700; font-size: 17px; letter-spacing: 0.04em; text-align: right; color: var(--accent); }
+      @media (prefers-color-scheme: light) { .eli-facts .v { color: #9a7b00; } }
+
+      /* ---------- new-car story panels ---------- */
+      .car-panel {
+        border-radius: 14px; overflow: hidden; position: relative;
+        background: #0d0d0f; color: #f4f2ec; border: 1px solid #2c2c30;
+        display: grid; grid-template-columns: 1fr 1fr;
+      }
+      @media (max-width: 760px) { .car-panel { grid-template-columns: 1fr; } }
+      .car-panel .photo { min-height: 280px; }
+      .car-panel .photo img { width: 100%; height: 100%; object-fit: cover; }
+      .car-panel .txt { padding: 36px 34px; display: flex; flex-direction: column; align-items: flex-start; }
+      .car-panel h2 { font-family: "Anton", sans-serif; font-weight: 400; text-transform: uppercase; font-size: clamp(32px, 4.6vw, 46px); margin: 12px 0 10px; line-height: 1.02; }
+      .car-panel h2 .y { color: var(--accent); }
+      .car-panel p { color: #c9c6bc; margin: 0 0 16px; max-width: 520px; }
+      .car-panel p strong { color: #fff; }
+      .car-panel .facts { display: grid; gap: 9px; margin: 2px 0 6px; width: 100%; }
+      .car-panel .fact { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; border-top: 1px dashed #2c2c30; padding-top: 9px; font-family: "Barlow Condensed", sans-serif; }
+      .car-panel .fact .k { font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; font-size: 15px; color: #a9a69c; }
+      .car-panel .fact .v { font-weight: 700; font-size: 18px; letter-spacing: 0.04em; text-align: right; }
+      .merch-soon {
+        margin-top: 26px; border: 1.5px dashed var(--panel-line); border-radius: 14px;
+        padding: 26px 28px; text-align: center;
+      }
+      .merch-soon h3 { font-family: "Barlow Condensed", sans-serif; font-weight: 700; font-size: 26px; letter-spacing: 0.04em; text-transform: uppercase; margin: 0 0 6px; }
+      .merch-soon p { color: var(--ink-2); margin: 0 auto; max-width: 520px; }
+
+      /* ---------- hero ---------- */
+      .hero {
+        background: var(--hero-bg); color: #f4f2ec;
+        border-bottom: 4px solid var(--accent);
+        position: relative; overflow: hidden;
+      }
+      .hero::after {
+        content: ""; position: absolute; inset: auto -10% -55% -10%; height: 70%;
+        background: radial-gradient(50% 100% at 50% 100%, rgba(250, 200, 20, 0.16), transparent 70%);
+        pointer-events: none;
+      }
+      .hero .wrap { padding: 64px 20px 58px; position: relative; z-index: 1; }
+      .hero .route {
+        display: inline-flex; align-items: center; gap: 10px;
+        font-family: "Barlow Condensed", sans-serif; font-weight: 700; letter-spacing: 0.22em;
+        font-size: 15px; text-transform: uppercase; color: var(--accent);
+        border: 1px solid rgba(250, 200, 20, 0.45); padding: 7px 14px; border-radius: 999px;
+      }
+      .hero .route .arrow { color: #f4f2ec; }
+      .hero h1 {
+        font-family: "Anton", sans-serif; font-weight: 400;
+        font-size: clamp(38px, 7.6vw, 86px); line-height: 1.02;
+        margin: 22px 0 0; text-transform: uppercase; word-break: keep-all;
+      }
+      .hero h1 .y { color: var(--accent); }
+      .hero .tagline {
+        font-family: "Barlow Condensed", sans-serif; font-weight: 600;
+        font-size: clamp(24px, 4.4vw, 40px); letter-spacing: 0.14em; text-transform: uppercase;
+        margin: 14px 0 0; color: #f4f2ec;
+      }
+      .hero p.lede { max-width: 620px; color: #c9c6bc; font-size: 19px; margin: 18px 0 0; }
+      .hero p.lede strong { color: #fff; }
+      .hero .cta-row { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 30px; }
+      .btn {
+        display: inline-flex; align-items: center; gap: 9px;
+        font-family: "Barlow Condensed", sans-serif; font-weight: 700; font-size: 18px;
+        letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none;
+        padding: 13px 24px; border-radius: 6px; border: 2px solid transparent;
+        cursor: pointer; transition: transform 0.15s ease, background 0.15s ease, color 0.15s ease;
+      }
+      .btn:active { transform: translateY(1px); }
+      .btn-yellow { background: var(--accent); color: var(--accent-ink); }
+      .btn-yellow:hover { background: #ffd83d; }
+      .btn-ghost { border-color: #3d3d42; color: #f4f2ec; background: transparent; }
+      .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+      .hero .stats { display: flex; flex-wrap: wrap; gap: 12px 34px; margin-top: 40px; }
+      .hero .stat b { display: block; font-family: "Anton", sans-serif; font-weight: 400; font-size: 30px; color: var(--accent); line-height: 1; }
+      .hero .stat span { font-family: "Barlow Condensed", sans-serif; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; font-size: 14px; color: #a9a69c; }
+
+      /* ---------- hunt fund tracker ---------- */
+      .hunt-fund-section { padding-top: 34px; }
+      .hunt-fund {
+        background: #0d0d0f; color: #f4f2ec; border: 1px solid #2c2c30;
+        border-top: 4px solid var(--accent); border-radius: 14px;
+        padding: 32px 34px 30px; box-shadow: var(--shadow);
+      }
+      .hunt-fund h2 {
+        font-family: "Anton", sans-serif; font-weight: 400; text-transform: uppercase;
+        font-size: clamp(32px, 5vw, 46px); margin: 0; line-height: 1;
+      }
+      .hunt-fund h2 .y { color: var(--accent); }
+      .fund-figures {
+        font-family: "Barlow Condensed", sans-serif; font-weight: 700;
+        font-size: clamp(22px, 3.4vw, 30px); letter-spacing: 0.06em;
+        margin: 14px 0 12px; color: #f4f2ec;
+      }
+      .fund-figures b { color: var(--accent); font-weight: 700; }
+      .fund-bar {
+        height: 16px; border-radius: 999px; background: #26262a;
+        border: 1px solid #3a3a3f; overflow: hidden;
+      }
+      .fund-fill { height: 100%; width: 0%; background: var(--accent); border-radius: 999px; }
+      .fund-targets { display: grid; gap: 9px; margin: 20px 0 0; }
+      .fund-targets p {
+        margin: 0; padding-top: 9px; border-top: 1px dashed #2c2c30;
+        font-family: "Barlow Condensed", sans-serif; font-weight: 700;
+        font-size: clamp(17px, 2.6vw, 21px); letter-spacing: 0.06em; color: #f4f2ec;
+      }
+      .fund-targets p .amt { color: var(--accent); }
+      .fund-note { color: #a9a69c; font-size: 15.5px; margin: 16px 0 0; max-width: 640px; }
+
+      /* ---------- sections ---------- */
+      section { padding: 58px 0 8px; }
+      .sec-head { display: flex; align-items: baseline; gap: 16px; margin-bottom: 8px; }
+      .sec-head h2 {
+        font-family: "Anton", sans-serif; font-weight: 400; text-transform: uppercase;
+        font-size: clamp(34px, 5.5vw, 48px); margin: 0; line-height: 1;
+      }
+      .sec-head .count { font-family: "Barlow Condensed", sans-serif; font-weight: 700; letter-spacing: 0.18em; color: var(--ink-3); text-transform: uppercase; font-size: 15px; }
+      .sec-sub { color: var(--ink-2); max-width: 640px; margin: 4px 0 26px; }
+
+      .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+      @media (max-width: 900px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+      @media (max-width: 540px) { .grid { grid-template-columns: 1fr; } }
+
+      .card {
+        background: var(--panel); border: 1px solid var(--panel-line); border-radius: 14px;
+        overflow: hidden; display: flex; flex-direction: column; box-shadow: var(--shadow);
+      }
+      .card .art { position: relative; aspect-ratio: 1 / 1; overflow: hidden; background: #101013; flex: none; }
+      .card .art.shirt { background: var(--shirt); }
+      .card .art.shirt img { width: 100%; height: 100%; object-fit: contain; padding: 9%; }
+      .card .art.fill img { width: 100%; height: 100%; object-fit: cover; }
+      .card .art.poster { aspect-ratio: 3 / 3.4; background: #101013; }
+      .card .art.poster img { width: 100%; height: 100%; object-fit: cover; }
+      .card .art.poster.lineup { aspect-ratio: 2400 / 3700; }
+      .tag {
+        position: absolute; top: 14px; left: 14px; z-index: 2;
+        font-family: "Barlow Condensed", sans-serif; font-weight: 700; font-size: 14px;
+        letter-spacing: 0.16em; text-transform: uppercase;
+        background: var(--accent); color: var(--accent-ink); padding: 5px 11px; border-radius: 5px;
+      }
+      .tag.dark { background: rgba(10, 10, 11, 0.85); color: var(--accent); border: 1px solid rgba(250, 200, 20, 0.5); }
+      .tag.right { left: auto; right: 14px; }
+      .tag.wip { background: #ff8a1f; color: #211304; border: 1px solid rgba(0, 0, 0, 0.35); }
+      @media (max-width: 560px) { .tag.wip.right { top: 50px; } }
+      .card .body { padding: 22px 22px 24px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+      .card h3 { font-family: "Barlow Condensed", sans-serif; font-weight: 700; font-size: 27px; letter-spacing: 0.03em; margin: 0; text-transform: uppercase; line-height: 1.08; }
+      .card .desc { color: var(--ink-2); font-size: 16px; line-height: 1.6; margin: 0; flex: 1; }
+      .card .row { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: auto; padding-top: 14px; }
+      .price { font-family: "Anton", sans-serif; font-size: 30px; line-height: 1; }
+      .price small { display: block; font-family: "Barlow Condensed", sans-serif; font-weight: 600; font-size: 12.5px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-3); margin-top: 6px; }
+      .btn-card {
+        background: transparent; color: var(--ink); border: 2px solid var(--ink);
+        padding: 11px 18px; font-size: 17px; border-radius: 6px; white-space: nowrap;
+      }
+      .btn-card:hover { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+
+      /* ---------- coming soon ---------- */
+      .soon {
+        margin-top: 58px; border-radius: 14px; overflow: hidden; position: relative;
+        background: #0d0d0f; color: #f4f2ec; border: 1px solid #2c2c30;
+        display: grid; grid-template-columns: 1.15fr 0.85fr;
+      }
+      @media (max-width: 760px) { .soon { grid-template-columns: 1fr; } }
+      .soon .txt { padding: 36px 34px; }
+      .soon .num {
+        font-family: "Anton", sans-serif; font-size: clamp(90px, 16vw, 170px); line-height: 0.9;
+        color: transparent; -webkit-text-stroke: 2px var(--accent);
+        display: flex; align-items: center; justify-content: center; padding: 24px;
+        background: radial-gradient(80% 80% at 50% 50%, rgba(250, 200, 20, 0.08), transparent 70%);
+        min-height: 220px; text-align: center;
+      }
+      .soon h2 { font-family: "Anton", sans-serif; font-weight: 400; text-transform: uppercase; font-size: clamp(30px, 4.5vw, 42px); margin: 10px 0 8px; line-height: 1.05; }
+      .soon p { color: #c9c6bc; margin: 0 0 20px; max-width: 480px; }
+
+      /* ---------- iconic 2.0 target ---------- */
+      .iconic {
+        border-radius: 14px; overflow: hidden; position: relative;
+        background: #0d0d0f; color: #f4f2ec; border: 1px solid #2c2c30;
+        display: grid; grid-template-columns: 1fr 1fr;
+      }
+      @media (max-width: 760px) { .iconic { grid-template-columns: 1fr; } }
+      .iconic .photo { min-height: 280px; }
+      .iconic .photo img { width: 100%; height: 100%; object-fit: cover; }
+      .iconic .txt { padding: 36px 34px; display: flex; flex-direction: column; align-items: flex-start; }
+      .iconic h2 { font-family: "Anton", sans-serif; font-weight: 400; text-transform: uppercase; font-size: clamp(32px, 4.6vw, 46px); margin: 12px 0 10px; line-height: 1.02; }
+      .iconic h2 .y { color: var(--accent); }
+      .iconic p { color: #c9c6bc; margin: 0 0 16px; max-width: 520px; }
+      .iconic p strong { color: #fff; }
+      .iconic .facts { display: grid; gap: 9px; margin: 2px 0 22px; width: 100%; }
+      .iconic .fact { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; border-top: 1px dashed #2c2c30; padding-top: 9px; font-family: "Barlow Condensed", sans-serif; }
+      .iconic .fact .k { font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; font-size: 15px; color: #a9a69c; }
+      .iconic .fact .v { font-weight: 700; font-size: 18px; letter-spacing: 0.04em; text-align: right; }
+      .iconic .notsold { color: #a9a69c; font-size: 15px; margin: 16px 0 0; }
+      .iconic-merch { margin-top: 26px; }
+      .car-merch { margin-top: 26px; }
+      .iconic-merch .grid { grid-template-columns: repeat(2, 1fr); }
+      @media (max-width: 540px) { .iconic-merch .grid { grid-template-columns: 1fr; } }
+
+      /* ---------- ideas ---------- */
+      .ideas { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+      @media (max-width: 900px) { .ideas { grid-template-columns: repeat(2, 1fr); } }
+      @media (max-width: 540px) { .ideas { grid-template-columns: 1fr; } }
+      .ideas li {
+        display: flex; align-items: center; gap: 14px;
+        background: var(--panel); border: 1px solid var(--panel-line); border-radius: 10px;
+        padding: 16px 18px;
+        font-family: "Barlow Condensed", sans-serif; font-weight: 600; font-size: 20px;
+        letter-spacing: 0.04em; text-transform: uppercase; line-height: 1.15;
+      }
+      .ideas .dot { flex: none; width: 10px; height: 10px; border-radius: 50%; background: var(--accent); }
+      .ideas .status {
+        margin-left: auto; flex: none;
+        font-size: 12.5px; font-weight: 700; letter-spacing: 0.16em; color: var(--ink-3);
+      }
+      .card.featured { border: 2px solid var(--accent); }
+      #bundles .grid, #diecast .grid { grid-template-columns: repeat(2, 1fr); }
+      @media (max-width: 540px) { #bundles .grid, #diecast .grid { grid-template-columns: 1fr; } }
+      .bundle-list { list-style: none; margin: 6px 0 0; padding: 0; color: var(--ink-2); font-size: 16px; line-height: 1.6; flex: 1; }
+      .bundle-list li { padding: 5px 0; border-bottom: 1px dashed var(--panel-line); }
+      .bundle-list li:last-child { border-bottom: 0; }
+      .bundle-list strong { color: var(--ink); }
+      .diecast-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+      .diecast-pair + .diecast-pair { margin-top: 20px; }
+      @media (max-width: 540px) { .diecast-pair { grid-template-columns: 1fr; } }
+      .diecast-pair figure { margin: 0; background: var(--panel); border: 1px solid var(--panel-line); border-radius: 14px; overflow: hidden; box-shadow: var(--shadow); display: flex; flex-direction: column; }
+      .diecast-pair figure img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; flex: none; }
+      .diecast-pair figcaption { padding: 22px 22px 24px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+      .diecast-pair figcaption strong { display: block; font-family: "Barlow Condensed", sans-serif; font-weight: 700; font-size: 27px; letter-spacing: 0.03em; text-transform: uppercase; line-height: 1.08; }
+      .diecast-pair figcaption span { color: var(--ink-2); font-size: 16px; line-height: 1.6; }
+
+      /* ---------- story ---------- */
+      .story { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 34px; align-items: start; }
+      @media (max-width: 820px) { .story { grid-template-columns: 1fr; } }
+      .story p { color: var(--ink-2); margin: 0 0 16px; font-size: 18px; }
+      .story p strong { color: var(--ink); }
+      .spec-list { border: 1px solid var(--panel-line); border-radius: 14px; overflow: hidden; background: var(--panel); }
+      .spec-list .spec { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 15px 20px; border-bottom: 1px solid var(--panel-line); }
+      .spec-list .spec:last-child { border-bottom: 0; }
+      .spec .k { font-family: "Barlow Condensed", sans-serif; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; font-size: 19px; }
+      .spec .k small { display: block; font-weight: 500; color: var(--ink-3); font-size: 13.5px; letter-spacing: 0.14em; }
+      .spec .v { font-family: "Anton", sans-serif; font-size: 24px; color: var(--accent); white-space: nowrap; }
+      @media (prefers-color-scheme: light) { .spec .v { color: #9a7b00; } }
+      .origin { border: 1px solid var(--panel-line); border-radius: 14px; background: var(--panel); padding: 22px 24px; margin-bottom: 28px; }
+      .origin .origin-label { font-family: "Barlow Condensed", sans-serif; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; font-size: 17px; color: var(--accent); margin: 0 0 8px; }
+      @media (prefers-color-scheme: light) { .origin .origin-label { color: #9a7b00; } }
+      .origin p { color: var(--ink-2); margin: 0; font-size: 18px; }
+      .origin p strong { color: var(--ink); }
+
+      /* ---------- drop note ---------- */
+      .drop {
+        margin: 64px 0 0; background: var(--accent); color: var(--accent-ink);
+        border-radius: 14px; padding: 38px 34px; text-align: center;
+      }
+      .drop h2 { font-family: "Anton", sans-serif; font-weight: 400; text-transform: uppercase; font-size: clamp(32px, 5.5vw, 48px); margin: 0 0 10px; line-height: 1.02; }
+      .drop p { max-width: 600px; margin: 0 auto 22px; font-size: 18px; font-weight: 500; }
+      .drop .btn-dark { background: #141310; color: var(--accent); }
+      .drop .btn-dark:hover { background: #000; }
+
+      /* ---------- footer ---------- */
+      footer { margin-top: 64px; border-top: 1px solid var(--panel-line); padding: 34px 0 44px; background: var(--bg-2); }
+      footer .wrap { display: flex; flex-wrap: wrap; gap: 18px 30px; align-items: center; justify-content: space-between; }
+      footer .brand { font-family: "Anton", sans-serif; font-size: 22px; text-transform: uppercase; }
+      footer .brand span { color: var(--accent); }
+      @media (prefers-color-scheme: light) { footer .brand span { color: #9a7b00; } }
+      footer nav { display: flex; gap: 22px; flex-wrap: wrap; }
+      footer nav a { font-family: "Barlow Condensed", sans-serif; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; color: var(--ink-2); font-size: 16px; }
+      footer nav a:hover { color: var(--accent); }
+      footer .fine { width: 100%; color: var(--ink-3); font-size: 14px; margin: 6px 0 0; }
+
+      /* ---------- printify gear ---------- */
+      .card .art.frame { aspect-ratio: 3661 / 1890; background: #0a0a0b; }
+      .card .art.frame img { width: 100%; height: 100%; object-fit: contain; }
+      #cases .grid { grid-template-columns: repeat(2, 1fr); }
+      @media (max-width: 540px) { #cases .grid { grid-template-columns: 1fr; } }
+      .designs { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
+      .designs span {
+        border: 1px solid var(--panel-line); border-radius: 999px; padding: 3px 11px;
+        font-family: "Barlow Condensed", sans-serif; font-weight: 600; font-size: 14.5px;
+        letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-2);
+      }
+      .store-link {
+        font-family: "Barlow Condensed", sans-serif; font-weight: 600; font-size: 15.5px;
+        letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-3);
+        text-decoration: none; margin-top: 10px;
+      }
+      .store-link:hover { color: var(--accent); }
+      .add-btn.added { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+
+      /* ---------- diecast version switch ---------- */
+      .version-row { display: flex; gap: 8px; margin-top: 8px; }
+      .version-btn {
+        flex: 1; background: transparent; color: var(--ink-2);
+        border: 1.5px solid var(--panel-line); border-radius: 6px;
+        padding: 8px 10px; cursor: pointer;
+        font-family: "Barlow Condensed", sans-serif; font-weight: 700; font-size: 15.5px;
+        letter-spacing: 0.1em; text-transform: uppercase;
+      }
+      .version-btn:hover { border-color: var(--accent); color: var(--ink); }
+      .version-btn.active { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+      .style-caption {
+        margin: 2px 0 0;
+        font-family: "Barlow Condensed", sans-serif; font-weight: 600;
+        font-size: 14.5px; letter-spacing: 0.12em; text-transform: uppercase;
+        color: var(--ink-3);
+      }
+
+      /* ---------- cart ---------- */
+      .cart-overlay {
+        position: fixed; inset: 0; z-index: 60; background: rgba(5, 5, 6, 0.62);
+        opacity: 0; pointer-events: none; transition: opacity 0.2s ease;
+      }
+      .cart-overlay.open { opacity: 1; pointer-events: auto; }
+      .cart-panel {
+        position: fixed; top: 0; right: 0; z-index: 61; height: 100dvh; width: min(430px, 100vw);
+        background: var(--panel); color: var(--ink); border-left: 1px solid var(--panel-line);
+        box-shadow: -18px 0 40px rgba(0, 0, 0, 0.4);
+        transform: translateX(105%); transition: transform 0.25s ease;
+        display: flex; flex-direction: column;
+      }
+      .cart-panel[hidden] { display: none; }
+      .cart-panel.open { transform: translateX(0); }
+      .cart-head {
+        display: flex; align-items: center; justify-content: space-between; gap: 14px;
+        padding: 18px 20px; border-bottom: 1px solid var(--panel-line);
+      }
+      .cart-head h2 { font-family: "Anton", sans-serif; font-weight: 400; text-transform: uppercase; font-size: 26px; margin: 0; line-height: 1; }
+      .cart-close {
+        background: transparent; border: 2px solid var(--panel-line); color: var(--ink);
+        width: 38px; height: 38px; border-radius: 6px; cursor: pointer; font-size: 18px; line-height: 1; flex: none;
+      }
+      .cart-close:hover { border-color: var(--accent); color: var(--accent); }
+      .cart-items { flex: 1; overflow-y: auto; padding: 8px 20px; }
+      .cart-empty { color: var(--ink-2); padding: 28px 0; margin: 0; }
+      .cart-group-head {
+        display: flex; justify-content: space-between; align-items: baseline; gap: 12px;
+        padding: 20px 0 2px;
+        font-family: "Barlow Condensed", sans-serif; font-weight: 700;
+        letter-spacing: 0.16em; text-transform: uppercase; font-size: 15px; color: var(--ink-2);
+      }
+      .cart-group-head:first-child { padding-top: 10px; }
+      .cart-group-head b { font-family: "Anton", sans-serif; font-weight: 400; font-size: 17px; color: var(--ink); letter-spacing: 0.02em; white-space: nowrap; }
+      .cart-item { padding: 14px 0; border-bottom: 1px dashed var(--panel-line); }
+      .cart-item:last-child { border-bottom: 0; }
+      .cart-item .ci-top { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; }
+      .cart-item .ci-name { font-family: "Barlow Condensed", sans-serif; font-weight: 700; font-size: 19px; letter-spacing: 0.03em; text-transform: uppercase; line-height: 1.15; }
+      .cart-item .ci-line { font-family: "Anton", sans-serif; font-size: 19px; white-space: nowrap; }
+      .cart-item .ci-meta { color: var(--ink-3); font-size: 13.5px; font-family: "Barlow Condensed", sans-serif; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; margin-top: 2px; }
+      .cart-item .ci-controls { display: flex; align-items: center; gap: 10px; margin-top: 10px; }
+      .qty-btn {
+        width: 30px; height: 30px; border-radius: 6px; border: 1.5px solid var(--panel-line);
+        background: transparent; color: var(--ink); font-size: 17px; line-height: 1; cursor: pointer;
+        display: inline-flex; align-items: center; justify-content: center;
+      }
+      .qty-btn:hover { border-color: var(--accent); color: var(--accent); }
+      .ci-qty { font-weight: 700; min-width: 20px; text-align: center; }
+      .ci-remove {
+        margin-left: auto; background: none; border: 0; cursor: pointer; padding: 4px 2px;
+        font-family: "Barlow Condensed", sans-serif; font-weight: 600; font-size: 15px;
+        letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3); text-decoration: underline;
+      }
+      .ci-remove:hover { color: #e5484d; }
+      .cart-foot { border-top: 1px solid var(--panel-line); padding: 18px 20px 22px; }
+      .cart-total { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 14px; }
+      .cart-total span { font-family: "Barlow Condensed", sans-serif; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; font-size: 16px; color: var(--ink-2); }
+      .cart-total b { font-family: "Anton", sans-serif; font-weight: 400; font-size: 30px; }
+      .cart-checkout { display: grid; gap: 10px; }
+      .cart-checkout .btn { justify-content: center; }
+      .btn-printify { border-color: var(--ink); color: var(--ink); background: transparent; }
+      .btn-printify:hover { background: var(--ink); color: var(--bg); }
+      .cart-note { color: var(--ink-3); font-size: 14px; margin: 12px 0 0; }
+      .cart-clear {
+        background: none; border: 0; cursor: pointer; padding: 10px 0 0;
+        font-family: "Barlow Condensed", sans-serif; font-weight: 600; font-size: 15px;
+        letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3); text-decoration: underline;
+      }
+      .cart-clear:hover { color: #e5484d; }
+      @media (prefers-reduced-motion: reduce) {
+        .cart-panel, .cart-overlay { transition: none; }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html { scroll-behavior: auto; }
+        .btn { transition: none; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="topbar">
+      <div class="wrap">
+        <a class="wordmark" href="#top" data-view-link="home">Sanghyeok’s 차고 <span>(Eli's Garage)</span></a>
+        <nav class="topnav">
+          <a href="#top" data-view-link="home">Home</a>
+          <a class="yt" href="https://www.youtube.com/@Eli_kim12" target="_blank" rel="noopener">YouTube ↗</a>
+        </nav>
+        <button type="button" class="cart-btn" id="cartBtn" aria-haspopup="dialog" aria-controls="cartPanel">Cart <span class="cart-count" id="cartCount">0</span></button>
+      </div>
+      <div class="tabbar" role="tablist" aria-label="Shop by car">
+        <div class="wrap">
+          <button type="button" class="tab-btn" role="tab" data-view="cregit" aria-selected="false">CREGiT &amp; Spirra</button>
+          <button type="button" class="tab-btn" role="tab" data-view="iconic" aria-selected="false">Iconic 2.0</button>
+          <button type="button" class="tab-btn" role="tab" data-view="elantra" aria-selected="false">Elantra N</button>
+          <button type="button" class="tab-btn" role="tab" data-view="p993" aria-selected="false">993</button>
+          <button type="button" class="tab-btn" role="tab" data-view="epique" aria-selected="false">Epique GT1</button>
+        </div>
+      </div>
+    </div>
+
+    <header class="hero" id="top">
+      <div class="wrap">
+        <span class="route">Daegu, South Korea <span class="arrow">→</span> Houston, Texas</span>
+        <h1>Sanghyeok’s <span class="y">차고</span> (Eli's Garage)</h1>
+        <p class="tagline">Korea's Forgotten Supercar</p>
+        <p class="lede">Merch for the Oullim Spirra — the hand-built Korean supercar almost nobody outside Korea has ever seen. <strong>Every purchase funds The Hunt:</strong> bringing the 1-of-1 CREGiT Spirra home from Daegu to Houston.</p>
+        <div class="cta-row">
+          <a class="btn btn-yellow" href="#cregit" data-view-link="cregit">Shop the drop</a>
+          <a class="btn btn-ghost" href="https://www.youtube.com/@Eli_kim12" target="_blank" rel="noopener">Watch the hunt ↗</a>
+        </div>
+        <div class="stats">
+          <div class="stat"><b>31</b><span>Model made only</span></div>
+          <div class="stat"><b>1 of 1</b><span>CREGiT Spirra exists</span></div>
+          <div class="stat"><b>470 hp</b><span>The CREGiT's output</span></div>
+          <div class="stat"><b>₩109M</b><span>The CREGiT's asking price</span></div>
+        </div>
+      </div>
+    </header>
+
+    <main class="wrap">
+    <div class="view active" id="view-home">
+      <!-- ============ MEET ELI ============ -->
+      <section id="meet" style="padding-top: 44px;">
+        <div class="sec-head"><h2>Meet Eli</h2><span class="count">The guy behind the garage</span></div>
+        <div class="meet">
+          <div>
+            <p>I'm <strong>Sanghyeok Kim — "Eli."</strong> I'm 18, Korean-Filipino, and based in Texas, where I hunt Korea's rarest cars from Houston and film the whole thing for my YouTube channel, <strong>Sanghyeok’s 차고 (Eli's Garage)</strong>.</p>
+            <p>The channel is built around one obsession: the <strong>Oullim Spirra</strong>, the hand-built Korean supercar the world forgot. The videos dig up the cars nobody outside Korea has ever seen — and the store is how we bring two of them home.</p>
+            <p><strong>What I'm funding:</strong> every dollar of profit from this merch goes into <strong>The Hunt Fund</strong> — buying the two target cars below, the 1-of-1 CREGiT Spirra in Daegu and a brand-new Spirra Iconic 2.0, and bringing both from Korea to Houston. Pick a car tab up top to shop its merch, watch the hunt on <a href="https://www.youtube.com/@Eli_kim12" target="_blank" rel="noopener">YouTube</a>, and know that every order moves the fund.</p>
+          </div>
+          <div class="eli-facts" aria-label="About Eli">
+            <div class="fact"><span class="k">Name</span><span class="v">Sanghyeok Kim · “Eli”</span></div>
+            <div class="fact"><span class="k">Age</span><span class="v">18</span></div>
+            <div class="fact"><span class="k">Heritage</span><span class="v">Korean-Filipino</span></div>
+            <div class="fact"><span class="k">Based in</span><span class="v">Houston, Texas, USA</span></div>
+            <div class="fact"><span class="k">Channel</span><span class="v">Sanghyeok’s 차고 (Eli's Garage)</span></div>
+            <div class="fact"><span class="k">The mission</span><span class="v">Daegu → Houston</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ THE HUNT FUND ============ -->
+      <section class="hunt-fund-section" id="hunt-fund" aria-label="The Hunt Fund tracker">
+        <div class="hunt-fund">
+          <h2>The <span class="y">Hunt Fund</span></h2>
+          <p class="fund-figures"><b>$0</b> raised of $137,000</p>
+          <div class="fund-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="137000" aria-label="Hunt Fund progress: $0 raised of $137,000"><div class="fund-fill"></div></div>
+          <div class="fund-targets">
+            <p>TARGET NO. 1 — THE 1-OF-1 CREGIT · <span class="amt">≈ $88,000 landed</span></p>
+            <p>TARGET NO. 2 — SPIRRA ICONIC 2.0 · <span class="amt">≈ $49,000 landed</span></p>
+          </div>
+          <p class="fund-note">Both figures are all-in estimates — they include the cars themselves plus shipping and import duty to bring them home from Korea to Houston.</p>
+        </div>
+      </section>
+
+      <!-- ============ STICKERS ============ -->
+      <section id="stickers">
+        <div class="sec-head"><h2>Stickers, Decals &amp; Keychain</h2><span class="count">Small gear · $3.10 each</span></div>
+        <p class="sec-sub">The $3.10 tier — the easiest way to fund The Hunt, and the easiest thing to slap on a toolbox, laptop, or daily driver. Regular merch — tees, posters, hoodies, mugs, and phone cases — is $31 flat; diecast and bundles are priced separately below.</p>
+        <div class="grid">
+          <article class="card">
+            <div class="art shirt"><img src="assets/stickers_1.png" alt="Sticker pack sheet with four Sanghyeok’s 차고 (Eli's Garage) Spirra designs" loading="lazy" /></div>
+            <div class="body">
+              <h3>Sticker Pack</h3>
+              <p class="desc">Four designs on one sheet — silhouette, badge, and wordmarks from the tee lineup.</p>
+              <div class="row"><div class="price">$3.10<small>Launch price</small></div><button type="button" class="btn btn-card add-btn" data-name="Sticker Pack" data-price="3.10" data-store="Fourthwall">Add to cart</button></div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="art shirt"><img src="assets/stickers_1.png" alt="Individual vinyl decals with Sanghyeok’s 차고 (Eli's Garage) Spirra designs" loading="lazy" /></div>
+            <div class="body">
+              <h3>Individual Vinyl Decals</h3>
+              <p class="desc">Single vinyl decals, sold one by one — pick your favorite design from the sheet and run it solo.</p>
+              <div class="row"><div class="price">$3.10<small>Each · Launch price</small></div><button type="button" class="btn btn-card add-btn" data-name="Individual Vinyl Decals" data-price="3.10" data-store="Fourthwall">Add to cart</button></div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="art shirt"><img src="assets/design_shift_badge_fixed.png" alt="Keychain design: the circular 6-speed manual shift-pattern badge" loading="lazy" /></div>
+            <div class="body">
+              <h3>Keychain</h3>
+              <p class="desc">The 6-speed badge as a keychain — carry the shift pattern everywhere your keys go.</p>
+              <div class="row"><div class="price">$3.10<small>Launch price</small></div><button type="button" class="btn btn-card add-btn" data-name="Keychain" data-price="3.10" data-store="Fourthwall">Add to cart</button></div>
+            </div>
+          </article>
+        </div>
+
+        <!-- ============ COMING SOON ============ -->
+        <div class="soon">
+          <div class="txt">
+            <span class="tag" style="position: static;">Coming soon</span>
+            <h2>Numbered Resin Display Model</h2>
+            <p>No Spirra diecast exists anywhere — so we're making our own. A resin display model, painted and finished by hand, in a <strong style="color:#fff;">first batch of just 31</strong>, each one individually numbered. When they're gone, they're gone.</p>
+            <a class="btn btn-yellow" href="#diecast" data-view-link="cregit" data-scroll="diecast">See the diecast in the CREGiT &amp; Spirra tab</a>
+          </div>
+          <div class="num" aria-hidden="true">×31</div>
+        </div>
+      </section>
+
+      <!-- ============ BUNDLES ============ -->
+      <section id="bundles">
+        <div class="sec-head"><h2>Bundles</h2><span class="count">2 levels · sticker + shirt + diecast</span></div>
+        <p class="sec-sub">Sticker, shirt, and diecast together in one box — two levels. Level 1 starts the collection; Level 2 is everything.</p>
+        <div class="grid">
+          <article class="card">
+            <div class="art fill"><span class="tag">Level 1</span><img src="assets/diecast_red_1of31.jpg" alt="Original Diecast included in the Level 1 bundle: red Spirra model in a clear case on a carbon base" loading="lazy" /></div>
+            <div class="body">
+              <h3>Sticker + Shirt + Diecast</h3>
+              <ul class="bundle-list">
+                <li><strong>Sticker</strong> — Sticker Pack ($3.10 tier)</li>
+                <li><strong>Shirt</strong> — any tee, $31</li>
+                <li><strong>Diecast</strong> — Original Diecast, 1 of the 31 made ($131 on its own)</li>
+              </ul>
+              <div class="row"><div class="price">$165.10<small>Bundle price</small></div><button type="button" class="btn btn-card add-btn" data-name="Bundle — Sticker + Shirt + Diecast (Level 1)" data-price="165.10" data-store="Fourthwall">Add to cart</button></div>
+            </div>
+          </article>
+
+          <article class="card featured">
+            <div class="art fill"><span class="tag">Level 2 · Everything</span><img src="assets/diecast_gtm_carbon.jpg" alt="Race Car Diecast included in the Everything Bundle: yellow #11 Oullim Racing GTM diecast model presented in a carbon display case" loading="lazy" /></div>
+            <div class="body">
+              <h3>Everything Bundle</h3>
+              <ul class="bundle-list">
+                <li><strong>Sticker</strong> — Sticker Pack + decals + keychain ($3.10 tier)</li>
+                <li><strong>Shirt</strong> — any tee, $31</li>
+                <li><strong>Diecast</strong> — Original Diecast ($131) <strong>and</strong> Race Car Diecast — 1 of only 3 made ($331)</li>
+                <li><strong>Everything</strong> — the full Level 2 box, all of it together</li>
+              </ul>
+              <div class="row"><div class="price">$496.10<small>Bundle price</small></div><button type="button" class="btn btn-card add-btn" data-name="Everything Bundle (Level 2)" data-price="496.10" data-store="Fourthwall">Add to cart</button></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ============ PHONE CASES & PLATE FRAMES (PRINTIFY) ============ -->
+      <section id="cases">
+        <div class="sec-head"><h2>Phone Cases &amp; Plate Frames</h2><span class="count">Sold on Printify · $31 each</span></div>
+        <p class="sec-sub">The gear Fourthwall doesn't make — sold through the Printify shop at <a href="https://elis-garage.printify.me" target="_blank" rel="noopener">elis-garage.printify.me</a>. Add them to the cart here, then finish checkout on Printify.</p>
+        <div class="grid">
+          <article class="card">
+            <div class="art shirt"><span class="tag">Printify</span><span class="tag right">31 each</span><img src="assets/design_shift_badge_fixed.png" alt="6-Speed Badge phone case design: the corrected manual shift pattern — 1, 3, 5 across the top and 2, 4, 6, R across the bottom — in a red and yellow ring" /></div>
+            <div class="body">
+              <h3>Phone Cases</h3>
+              <p class="desc">Four designs for iPhone and Samsung models — every iPhone from the 11 to the 18 Pro Max, plus Galaxy S21 through S26. The 6-Speed Badge design is shown here, with the corrected shift pattern.</p>
+              <div class="designs" aria-label="Phone case designs">
+                <span>Minimal Spirra</span><span>Only 31 Made</span><span>The Hunt</span><span>6-Speed Badge</span>
+              </div>
+              <div class="row"><div class="price">$31<small>iPhone · Samsung</small></div><button type="button" class="btn btn-card add-btn" data-name="Phone Case" data-price="31" data-store="Printify">Add to cart</button></div>
+              <a class="store-link" href="https://elis-garage.printify.me" target="_blank" rel="noopener">Buy on Printify ↗</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="art frame"><span class="tag">Printify</span><span class="tag right">31 each</span><img src="assets/plate_frame_design_badge.png" alt="6-Speed Badge license plate frame design: black frame with the 6-speed shift-pattern badge at the bottom" /></div>
+            <div class="body">
+              <h3>License Plate Frames</h3>
+              <p class="desc">Three designs — Eli's Garage, The Hunt, and Only 31 Made — plus the 6-Speed Badge design shown here, with the badge sitting on the bottom rail.</p>
+              <div class="designs" aria-label="License plate frame designs">
+                <span>Eli's Garage</span><span>The Hunt</span><span>Only 31 Made</span><span>6-Speed Badge</span>
+              </div>
+              <div class="row"><div class="price">$31<small>Plate frame</small></div><button type="button" class="btn btn-card add-btn" data-name="License Plate Frame" data-price="31" data-store="Printify">Add to cart</button></div>
+              <a class="store-link" href="https://elis-garage.printify.me" target="_blank" rel="noopener">Buy on Printify ↗</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ============ IDEAS ============ -->
+      <section id="ideas">
+        <div class="sec-head"><h2>On the drawing board</h2><span class="count">Product ideas · next drops</span></div>
+        <p class="sec-sub">Everything on this board is in the shop now. The tees, keychain, and decals are in the shop above — regular merch is $31 flat, with decals and the keychain at $3.10 each. Every idea on the list made it in.</p>
+        <ul class="ideas">
+          <li><span class="dot"></span>Yellow CREGiT car tees<span class="status">In the shop · $31</span></li>
+          <li><span class="dot"></span>Red Spirra S tees<span class="status">In the shop · $31</span></li>
+          <li><span class="dot"></span>6-speed shifter pattern tees<span class="status">In the shop · $31</span></li>
+          <li><span class="dot"></span>Keychains<span class="status">In the shop · $3.10</span></li>
+          <li><span class="dot"></span>Phone cases<span class="status">In the shop · $31</span></li>
+          <li><span class="dot"></span>Mugs<span class="status">In the shop · $31</span></li>
+          <li><span class="dot"></span>Hoodies<span class="status">In the shop · $31</span></li>
+          <li><span class="dot"></span>License plate frames<span class="status">In the shop · $31</span></li>
+          <li><span class="dot"></span>Decals<span class="status">In the shop · $3.10 each</span></li>
+        </ul>
+        <p class="sec-sub" style="margin: 18px 0 0;">Phone cases and license plate frames are sold on Printify: <a href="https://elis-garage.printify.me" target="_blank" rel="noopener">elis-garage.printify.me</a></p>
+      </section>
+
+      <!-- ============ DROP NOTE ============ -->
+      <div class="drop" id="drop">
+        <h2>Build your list, check out at the shops</h2>
+        <p>Add anything on this page to the cart, then finish checkout at the real shops — Fourthwall for tees, posters, stickers, diecast, and bundles, and Printify for phone cases and license plate frames. New videos land with every drop.</p>
+        <a class="btn btn-dark" href="https://www.youtube.com/@Eli_kim12" target="_blank" rel="noopener">Follow Sanghyeok’s 차고 (Eli's Garage) on YouTube ↗</a>
+      </div>
+    </div>
+
+    <div class="view" id="view-cregit">
+      <!-- ============ THE HUNT — STORY ============ -->
+      <section id="hunt-story" style="padding-top: 44px;">
+        <figure class="view-hero"><img src="assets/cregit_hero.jpg" alt="The 1-of-1 yellow CREGiT Spirra with black stripes in Daegu, front three-quarter view" /></figure>
+        <div class="sec-head"><h2>The Hunt</h2><span class="count">Target No. 1 · The 1-of-1 CREGiT</span></div>
+        <div class="meet" style="grid-template-columns: 1fr;">
+          <div>
+            <p>Korea built a supercar and the world barely noticed. The <strong>Spirra</strong> was hand-built in South Korea — a mid-engine, rear-drive machine from a tiny company that refused to accept Korea couldn't make a supercar. Only <strong>31 Spirra S models</strong> were ever made.</p>
+            <p>And in Daegu, one car sits above them all: a <strong>yellow CREGiT with black stripes, 1,538 km on the clock</strong>, the only one of its kind — <strong>1 of 1</strong>.</p>
+            <p>This store exists for one reason: to bring that car home to Houston. Every shirt, every poster, every diecast is a brick in that road.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ STORY ============ -->
+      <section id="story">
+        <div class="sec-head"><h2>The Car</h2><span class="count">Why a Spirra?</span></div>
+        <div class="origin">
+          <p class="origin-label">The Origin — Proto Motors PS-II, V8 Concept</p>
+          <p>Before the Spirra, there was the <strong>PS-II</strong> — a mid-engine prototype built by Han-chul Kim's <strong>Proto Motors</strong>, powered by a <strong>Ford Mustang SVT Cobra V8 making about 320 hp</strong>. In 2007, <strong>Oullim Motors</strong> acquired Proto — and the PS-II's DNA became the Spirra.</p>
+        </div>
+        <div class="story">
+          <div>
+            <p>Long before Korea was known for performance cars, a small Korean company called <strong>Oullim</strong> decided to build a supercar by hand. The result was the <strong>Spirra</strong> — a mid-engine machine built in tiny numbers and sold almost entirely at home, which is why most of the world never heard of it.</p>
+            <p>Production stopped at just <strong>31 models made only</strong>. The hotter variants — the T, the EX — are rarer still. And at the very top sits the <strong>CREGiT</strong>: a one-off, 470hp, yellow with black stripes, and the only one ever made. It's sitting in Daegu, South Korea.</p>
+            <p><strong>The Hunt</strong> is Eli's mission to buy that car and bring it to Houston, Texas — documented video by video on the Sanghyeok’s 차고 (Eli's Garage) channel. This store exists for one reason: every tee, poster, and sticker moves the CREGiT fund forward.</p>
+          </div>
+          <div class="spec-list" aria-label="Spirra lineup specifications">
+            <div class="spec"><span class="k">Spirra N<small>Naturally aspirated</small></span><span class="v">175 hp</span></div>
+            <div class="spec"><span class="k">Spirra S<small>The original</small></span><span class="v">330 hp</span></div>
+            <div class="spec"><span class="k">Spirra T<small>Turbocharged</small></span><span class="v">420 hp</span></div>
+            <div class="spec"><span class="k">Spirra EX<small>The flagship</small></span><span class="v">500 hp</span></div>
+            <div class="spec"><span class="k">CREGiT<small>1 of 1 · Daegu, KR</small></span><span class="v">470 hp</span></div>
+            <div class="spec"><span class="k">Models made<small>31 model made only</small></span><span class="v">31</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ TEES ============ -->
+      <section id="tees">
+        <div class="sec-head"><h2>Tees</h2><span class="count">7 designs · printed on black · $31 each</span></div>
+        <p class="sec-sub">Original Sanghyeok’s 차고 (Eli's Garage) artwork — silhouettes, spec panels, and the hunt itself. All tees are $31 flat.</p>
+        <div class="grid">
+          <article class="card">
+            <div class="art shirt"><span class="tag">Fan favorite</span><img src="assets/tee_4_framed.png" alt="Rear View tee design: the Spirra's round taillights and rear end in a framed print" loading="lazy" /></div>
+            <div class="body">
+              <h3>“Rear View” Tee</h3>
+              <p class="desc">That rear end — quad round taillights and all — framed like the poster it deserves to be.</p>
+              <div class="row"><div class="price">$31<small>Launch price</small></div><button type="button" class="btn btn-card add-btn" data-name="Rear View Tee" data-price="31" data-store="Fourthwall">Add to cart</button></div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="art shirt"><img src="assets/tee_1_silhouette.png" alt="Minimal Spirra tee design: white Spirra silhouette over the words SPIRRA — Korea's Forgotten Supercar — Sanghyeok’s 차고 (Eli's Garage)" loading="lazy" /></div>
+            <div class="body">
+              <h3>“Minimal Spirra” Tee</h3>
+              <p class="desc">One clean silhouette and the line that started the channel: Korea's Forgotten Supercar.</p>
+              <div class="row"><div class="price">$31<small>Launch price</small></div><button type="button" class="btn btn-card add-btn" data-name="Minimal Spirra Tee" data-price="31" data-store="Fourthwall">Add to cart</button></div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="art shirt"><span class="tag">31 each</span><img src="assets/tee_2_only31.png" alt="Only 31 Made tee design with Spirra artwork and the number 31" loading="lazy" /></div>
+            <div class="body">
+              <h3>“Only 31 Made” Tee</h3>
+              <p class="desc">31 model made only. Ever. Rarer than most hypercars — that's the whole flex.</p>
+              <div class="row"><div class="price">$31<small>Launch price</small></div><button type="button" class="btn btn-card add-btn" data-name="Only 31 Made Tee" data-price="31" data-store="Fourthwall">Add to cart</button></div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="art shirt"><span class="tag">31 each</span><img src="assets/tee_2_only31.png" alt="Only 31 Made hoodie design with Spirra artwork and the number 31" loading="lazy" /></div>
+            <div class="body">
+              <h3>“Only 31 Made” Hoodie</h3>
+              <p class="desc">31 model made only. Ever. Channel badge on the front, the Only 31 Made graphic on the back, on a pullover hoodie. Printed on black.</p>
+              <div class="row"><div class="price">$31<small>Launch price</small></div><button type="button" class="btn btn-card add-btn" data-name="Only 31 Made Hoodie" data-price="31" data-store="Fourthwall">Add to cart</button></div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="art shirt"><span class="tag dark">The Hunt series</span><img src="assets/tee_3_hunt.png" alt="The Hunt tee design: Spirra artwork for the CREGiT hunt series" loading="lazy" /></div>
+            <div class="body">
+              <h3>“The Hunt” Tee</h3>
+              <p class="desc">The official tee of the CREGiT hunt. Wear it now, tell the story when the car lands in Houston.</p>
+              <div class="row"><div class="price">$31<small>Launch price</small></div><button type="button" class="btn btn-card add-btn" data-name="The Hunt Tee" data-price="31" data-store="Fourthwall">Add to cart</button></div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="art fill"><img src="assets/design_red_s_black.jpg" alt="Spirra S Red panel tee design: front and rear studio views of the red Spirra S" loading="lazy" /></div>
+            <div class="body">
+              <h3>“Spirra S — Red” Panel Tee</h3>
+              <p class="desc">Front and rear studio panels of the red Spirra S — the original, matched to the real car.</p>
+              <div class="row"><div class="price">$31<small>Launch price</small></div><button type="button" class="btn btn-card add-btn" data-name="Spirra S — Red Panel Tee" data-price="31" data-store="Fourthwall">Add to cart</button></div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="art fill"><span class="tag">1 of 1</span><img src="assets/design_yellow_cregit_black.jpg" alt="CREGiT 1-of-1 panel tee design: front and rear views of the yellow CREGiT Spirra with black stripes" loading="lazy" /></div>
+            <div class="body">
+              <h3>“CREGiT 1-of-1” Panel Tee</h3>
+              <p class="desc">Art of the actual car — the yellow, black-striped CREGiT sitting in Daegu. The only one on Earth.</p>
+              <div class="row"><div class="price">$31<small>Launch price</small></div><button type="button" class="btn btn-card add-btn" data-name="CREGiT 1-of-1 Panel Tee" data-price="31" data-store="Fourthwall">Add to cart</button></div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="art shirt"><img src="assets/design_shift_badge_fixed.png" alt="6-Speed badge tee design: a circular manual shift-pattern badge" loading="lazy" /></div>
+            <div class="body">
+              <h3>“6-Speed” Badge Tee</h3>
+              <p class="desc">The manual shift-pattern badge, cut as a clean circle. Row your own — no paddles allowed.</p>
+              <div class="row"><div class="price">$31<small>Launch price</small></div><button type="button" class="btn btn-card add-btn" data-name="6-Speed Badge Tee" data-price="31" data-store="Fourthwall">Add to cart</button></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ============ POSTERS ============ -->
+      <section id="posters">
+        <div class="sec-head"><h2>Posters</h2><span class="count">3 designs · garage-wall ready · $31 each</span></div>
+        <p class="sec-sub">Built from Eli's own photos and spec-sheet layouts. All posters are $31 flat.</p>
+        <div class="grid">
+          <article class="card">
+            <div class="art poster"><img src="assets/poster_blue_s.jpg" alt="PS-II V8 Concept poster: the Proto Motors PS-II in blue" loading="lazy" /></div>
+            <div class="body">
+              <h3>“PS-II V8 Concept” Poster</h3>
+              <p class="desc">The original — the Proto Motors PS-II concept with the Mustang V8, before it became the Spirra.</p>
+              <div class="row"><div class="price">$31<small>Launch price</small></div><button type="button" class="btn btn-card add-btn" data-name="PS-II V8 Concept Poster" data-price="31" data-store="Fourthwall">Add to cart</button></div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="art poster lineup"><img src="assets/poster_2_lineup.jpg" alt="The Lineup poster: all 8 models in a two-column grid — SPIRRA family on the left (N, S, T, EX) and CREGiT family on the right (N, S, T, EX), every car fully visible with its horsepower figure" /></div>
+            <div class="body">
+              <h3>“The Lineup” Poster</h3>
+              <p class="desc">Every model on one sheet — SPIRRA N 175hp · S 330hp · T 420hp · EX 500hp and CREGiT N 175hp · S 305hp · T 470hp · EX 600hp.</p>
+              <div class="row"><div class="price">$31<small>Launch price</small></div><button type="button" class="btn btn-card add-btn" data-name="The Lineup Poster" data-price="31" data-store="Fourthwall">Add to cart</button></div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="art poster"><img src="assets/poster_3_31.jpg" alt="31 poster: a bold number 31 design marking the 31 models made only" loading="lazy" /></div>
+            <div class="body">
+              <h3>“31” Poster</h3>
+              <p class="desc">One number says everything you need to know about how rare this car is.</p>
+              <div class="row"><div class="price">$31<small>Launch price</small></div><button type="button" class="btn btn-card add-btn" data-name="31 Poster" data-price="31" data-store="Fourthwall">Add to cart</button></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ============ DIECAST ============ -->
+      <section id="diecast">
+        <div class="sec-head"><h2>Diecast</h2><span class="count">31 original · only 3 race cars</span></div>
+        <p class="sec-sub">No Spirra diecast exists anywhere — so we're making our own. Two runs, both numbered, both gone when they're gone.</p>
+        <div class="grid">
+          <article class="card" id="originalDiecastCard">
+            <div class="art fill" style="aspect-ratio: 2436 / 800;"><span class="tag">31 made</span><span class="tag wip right">Work in progress</span><img src="assets/diecast_original_combo.jpg" alt="Original Diecast — both styles side by side: the red Oullim Spirra (Normal style) and the yellow CREGiT Spirra with black stripes in a clear case (CREGiT style), each presented in a carbon display case" loading="lazy" /></div>
+            <div class="body">
+              <div class="version-row" role="group" aria-label="Diecast style" style="margin-top: 0;">
+                <button type="button" class="version-btn active" data-style="normal" aria-pressed="true">Normal · $131</button>
+                <button type="button" class="version-btn" data-style="cregit" aria-pressed="false">CREGiT · $131.31</button>
+              </div>
+              <p class="style-caption" id="originalDiecastCaption">Selected: Normal style</p>
+              <h3>Original Diecast — 31 Made</h3>
+              <p class="desc">The original diecast run: <strong>31 models made only</strong>, matching the 31 real Spirras. Each one individually numbered and presented in a carbon display case.</p>
+              <div class="row"><div class="price"><span id="originalDiecastPrice">$131</span><small>Launch price</small></div><button type="button" class="btn btn-card add-btn" id="originalDiecastAdd" data-name="Original Diecast — Normal" data-price="131" data-store="Fourthwall">Add to cart</button></div>
+            </div>
+          </article>
+          <article class="card" id="raceDiecastCard">
+            <div class="art fill" style="aspect-ratio: 2738 / 800;"><span class="tag">Only 3 made</span><span class="tag wip right">Work in progress</span><img src="assets/diecast_race_combo.jpg" alt="Race Car Diecast — both styles side by side: the yellow GTM in a clear case (Yellow GTM style) and the yellow #11 Oullim Racing GTM ( #11 GTM style), each presented in a carbon display case" loading="lazy" /></div>
+            <div class="body">
+              <div class="version-row" role="group" aria-label="Diecast style" style="margin-top: 0;">
+                <button type="button" class="version-btn active" data-style="yellowgtm" aria-pressed="true">Yellow GTM · $331</button>
+                <button type="button" class="version-btn" data-style="gtm11" aria-pressed="false">#11 GTM · $331.31</button>
+              </div>
+              <p class="style-caption" id="raceDiecastCaption">Selected: Yellow GTM style</p>
+              <h3>Race Car Diecast — Only 3 Made</h3>
+              <p class="desc">The race car — the <strong>#11 Oullim Racing GTM</strong>. The race car run: <strong>just 3 models</strong>, the rarest thing in the shop. Each one presented in a carbon display case. When the 3 are claimed, this one never comes back.</p>
+              <div class="row"><div class="price"><span id="raceDiecastPrice">$331</span><small>Launch price</small></div><button type="button" class="btn btn-card add-btn" id="raceDiecastAdd" data-name="Race Car Diecast — Yellow GTM" data-price="331" data-store="Fourthwall">Add to cart</button></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+    </div>
+
+    <div class="view" id="view-iconic">
+      <!-- ============ THE COMEBACK — STORY ============ -->
+      <section id="comeback-story" style="padding-top: 44px;">
+        <figure class="view-hero"><img src="assets/iconic20_main.jpg" alt="Spirra Iconic 2.0 show car in dark gray, front three-quarter view on a show stand in Korea" /></figure>
+        <div class="sec-head"><h2>The Comeback</h2><span class="count">Target No. 2 · Spirra Iconic 2.0</span></div>
+        <div class="meet" style="grid-template-columns: 1fr;">
+          <div>
+            <p>The Spirra was never supposed to come back. Then Oullim did it anyway. The <strong>Iconic 2.0</strong> is the Spirra reborn in Korea right now — <strong>manual gearbox, polycarbonate, carbon aero, built to order</strong>.</p>
+            <p>Eli's spec is already picked: manual, polycarbonate windows, the Recaro seat, the full carbon wing. It's <strong>Target No. 2 of the Hunt Fund</strong> — the new car that will park next to the 1-of-1 CREGiT when both make the trip from Korea to Houston.</p>
+            <p><strong>100 made.</strong> When they're gone, this chapter closes.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ TARGET NO. 2 — SPIRRA ICONIC 2.0 ============ -->
+      <section id="iconic">
+        <div class="iconic">
+          <div class="photo"><img src="assets/iconic20_main.jpg" alt="Spirra Iconic 2.0 show car in dark gray, front three-quarter view on a show stand in Korea" /></div>
+          <div class="txt">
+            <span class="tag" style="position: static;">Target No. 2 · The modern one</span>
+            <h2>Spirra <span class="y">Iconic 2.0</span></h2>
+            <p>Target No. 1 is the 1-of-1 CREGiT in Daegu. Target No. 2 is this — the <strong>Spirra Iconic 2.0</strong>, a brand-new Spirra built in Korea, and the modern partner to the CREGiT in the two-car dream garage this store is funding.</p>
+            <div class="facts">
+              <div class="fact"><span class="k">Price in Korea</span><span class="v">₩49,800,000 · about $37,000</span></div>
+              <div class="fact"><span class="k">Eli's chosen build</span><span class="v">MANUAL · POLYCARBONATE · RECARO SEAT · CARBON WING</span></div>
+            </div>
+            <a class="btn btn-yellow" href="https://spirra.store/product/spirra-iconic-20/59/category/71/display/1/" target="_blank" rel="noopener">See the Iconic 2.0 at spirra.store ↗</a>
+            <p class="notsold"><strong style="color:#fff;">Not sold by this store.</strong> The Iconic 2.0 is the second car The Hunt fund is chasing — every piece of merch in the shop above moves it closer.</p>
+          </div>
+        </div>
+        <div class="iconic-merch">
+          <div class="sec-head"><h2 style="font-size: clamp(26px, 4vw, 36px);">Iconic 2.0 Merch</h2><span class="count">7 pieces · Fourthwall &amp; Printify · $45 each · diecast $145–$165</span></div>
+          <p class="sec-sub">The car isn't sold here — its merch is. The Iconic 2.0 in print: the carbon show car on a tee, poster, hoodie, and mug on Fourthwall, a phone case and plate frame on Printify, and a diecast 3D printed to order by Eli.</p>
+          <div class="grid">
+            <article class="card">
+              <div class="art shirt"><span class="tag">100 each</span><img src="assets/iconic20_tee.jpg" alt="Iconic 2.0 tee design: the carbon-fiber Spirra Iconic 2.0 show car framed above the words SPIRRA ICONIC 2.0 — The Modern One" loading="lazy" /></div>
+              <div class="body">
+                <h3>“Iconic 2.0” Tee</h3>
+                <p class="desc">The real carbon-fiber show car, framed on the front — Target No. 2, The Modern One. Printed on black.</p>
+                <div class="row"><div class="price">$45<small>Launch price</small></div><button type="button" class="btn btn-card add-btn" data-name="Iconic 2.0 Tee" data-price="45" data-store="Fourthwall">Add to cart</button></div>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="art poster"><span class="tag">100 each</span><img src="assets/poster_iconic20.jpg" alt="Iconic 2.0 poster: the carbon-fiber Spirra Iconic 2.0 show car with the words The Modern One — Spirra Iconic 2.0 — The New Spirra, manual gearbox, polycarbonate" loading="lazy" /></div>
+              <div class="body">
+                <h3>“Iconic 2.0” Poster</h3>
+                <p class="desc">The new Spirra, garage-wall size — the carbon show car with Eli's chosen build in the print: manual gearbox, polycarbonate. 12″ × 18″.</p>
+                <div class="row"><div class="price">$45<small>Launch price</small></div><button type="button" class="btn btn-card add-btn" data-name="Iconic 2.0 Poster" data-price="45" data-store="Fourthwall">Add to cart</button></div>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="art shirt"><span class="tag">100 each</span><img src="assets/iconic20_tee.jpg" alt="Iconic 2.0 hoodie design: the carbon-fiber Spirra Iconic 2.0 show car framed above the words SPIRRA ICONIC 2.0 — The Modern One" loading="lazy" /></div>
+              <div class="body">
+                <h3>“Iconic 2.0” Hoodie</h3>
+                <p class="desc">The real carbon-fiber show car, framed on the front — Target No. 2, The Modern One, on a pullover hoodie. Printed on black.</p>
+                <div class="row"><div class="price">$45<small>Launch price</small></div><button type="button" class="btn btn-card add-btn" data-name="Iconic 2.0 Hoodie" data-price="45" data-store="Fourthwall">Add to cart</button></div>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="art shirt"><span class="tag">100 each</span><img src="assets/iconic20_tee.jpg" alt="Iconic 2.0 mug design: the carbon-fiber Spirra Iconic 2.0 show car framed above the words SPIRRA ICONIC 2.0 — The Modern One" loading="lazy" /></div>
+              <div class="body">
+                <h3>“Iconic 2.0” Mug</h3>
+                <p class="desc">The Iconic 2.0 print on a black glossy mug — the carbon show car, coffee-side. Target No. 2, The Modern One.</p>
+                <div class="row"><div class="price">$45<small>Launch price</small></div><button type="button" class="btn btn-card add-btn" data-name="Iconic 2.0 Mug" data-price="45" data-store="Fourthwall">Add to cart</button></div>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="art shirt"><span class="tag">Printify</span><span class="tag right">100 each</span><img src="assets/case_iconic20.jpg" alt="Iconic 2.0 phone case design: the carbon-fiber Spirra Iconic 2.0 show car framed above the words SPIRRA ICONIC 2.0 — The Modern One" loading="lazy" /></div>
+              <div class="body">
+                <h3>“Iconic 2.0” Phone Case</h3>
+                <p class="desc">The framed show-car design on a tough phone case — iPhone and Samsung models, sold through the Printify shop.</p>
+                <div class="row"><div class="price">$45<small>iPhone · Samsung</small></div><button type="button" class="btn btn-card add-btn" data-name="Iconic 2.0 Phone Case" data-price="45" data-store="Printify">Add to cart</button></div>
+                <a class="store-link" href="https://elis-garage.printify.me" target="_blank" rel="noopener">Buy on Printify ↗</a>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="art frame"><span class="tag">Printify</span><span class="tag right">100 each</span><img src="assets/plate_frame_design_iconic20.png" alt="Iconic 2.0 license plate frame design: black frame with SPIRRA ICONIC 2.0 in yellow on the top rail and THE MODERN ONE in white on the bottom rail" loading="lazy" /></div>
+              <div class="body">
+                <h3>“Iconic 2.0” License Plate Frame</h3>
+                <p class="desc">“SPIRRA ICONIC 2.0” on the top rail, “THE MODERN ONE” on the bottom — the Iconic 2.0 frame, sold through the Printify shop.</p>
+                <div class="row"><div class="price">$45<small>Plate frame</small></div><button type="button" class="btn btn-card add-btn" data-name="Iconic 2.0 License Plate Frame" data-price="45" data-store="Printify">Add to cart</button></div>
+                <a class="store-link" href="https://elis-garage.printify.me" target="_blank" rel="noopener">Buy on Printify ↗</a>
+              </div>
+            </article>
+
+            <article class="card" id="iconicDiecastCard">
+              <div class="art fill"><span class="tag">Printed to order</span><span class="tag wip right">Work in progress</span><img id="iconicDiecastImg" src="assets/diecast_iconic20_carbon_photo.jpg" alt="Iconic 2.0 Diecast — Carbon version: the real carbon-fiber Spirra Iconic 2.0 show car the 3D-printed diecast is modeled on" loading="lazy" /></div>
+              <div class="body">
+                <h3>“Iconic 2.0” Diecast</h3>
+                <p class="desc">A 1:24-scale Iconic 2.0, 180mm long, 3D printed by Eli from the store's own 3D model of the car — printed to order, so yours comes off the printer for you. Pick your version: Carbon or Yellow.</p>
+                <div class="version-row" role="group" aria-label="Diecast version">
+                  <button type="button" class="version-btn active" data-version="carbon" aria-pressed="true">Carbon · $165</button>
+                  <button type="button" class="version-btn" data-version="yellow" aria-pressed="false">Yellow · $145</button>
+                </div>
+                <div class="row"><div class="price"><span id="iconicDiecastPrice">$165</span><small>Printed to order</small></div><button type="button" class="btn btn-card add-btn" id="iconicDiecastAdd" data-name="Iconic 2.0 Diecast — Carbon" data-price="165" data-store="Fourthwall">Add to cart</button></div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <div class="view" id="view-elantra">
+      <section style="padding-top: 44px;">
+        <figure class="view-hero"><img src="assets/elantra_n.jpg" alt="Hyundai Elantra N in white with red accents, front three-quarter press photo on a desert road" /></figure>
+        <div class="car-panel">
+          <div class="photo"><img src="assets/elantra_n.jpg" alt="Hyundai Elantra N in white with red accents, front three-quarter press photo on a desert road" /></div>
+          <div class="txt">
+            <span class="tag" style="position: static;">New in the garage</span>
+            <h2>Hyundai <span class="y">Elantra N</span></h2>
+            <p><strong>The one you can actually buy.</strong> Not every hero car is locked in a collection. The Elantra N is Hyundai's love letter to people who actually drive — a price a normal human can reach, and it's in showrooms right now. In a garage full of ghosts and unicorns, this is the one that starts every morning.</p>
+            <div class="facts">
+              <div class="fact"><span class="k">Engine</span><span class="v">2.0L turbo inline-4</span></div>
+              <div class="fact"><span class="k">Power</span><span class="v">276 hp · 289 lb-ft</span></div>
+              <div class="fact"><span class="k">Gearbox</span><span class="v">6-speed manual or 8-speed DCT</span></div>
+              <div class="fact"><span class="k">Drive</span><span class="v">FWD · electronic LSD</span></div>
+              <div class="fact"><span class="k">In production</span><span class="v">Since 2022</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="car-merch">
+          <div class="sec-head"><h2 style="font-size: clamp(26px, 4vw, 36px);">Elantra N Merch</h2><span class="count">Tee · Hoodie · Poster · $31 each</span></div>
+          <p class="sec-sub">The Elantra N in print — the car with its headline specs in the design: 2.0L turbo, 276 hp. Original artwork, no brand logos.</p>
+          <div class="grid">
+            <article class="card">
+              <div class="art fill"><span class="tag">276 hp</span><img src="assets/design_elantra_n.jpg" alt="Elantra N tee design: the white Elantra N on a desert road above the words ELANTRA N — 2.0L Turbo · 276 HP" loading="lazy" /></div>
+              <div class="body">
+                <h3>“Elantra N” Tee</h3>
+                <p class="desc">The daily-driver hero in full color — 2.0L turbo, 276 hp. Channel badge on the front, the Elantra N graphic on the back. Printed on black.</p>
+                <div class="row"><div class="price">$31<small>Launch price</small></div><button type="button" class="btn btn-card add-btn" data-name="Elantra N Tee" data-price="31" data-store="Fourthwall">Add to cart</button></div>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="art fill"><span class="tag">276 hp</span><img src="assets/design_elantra_n.jpg" alt="Elantra N hoodie design: the white Elantra N on a desert road above the words ELANTRA N — 2.0L Turbo · 276 HP" loading="lazy" /></div>
+              <div class="body">
+                <h3>“Elantra N” Hoodie</h3>
+                <p class="desc">The daily-driver hero in full color — 2.0L turbo, 276 hp. Channel badge on the front, the Elantra N graphic on the back, on a pullover hoodie. Printed on black.</p>
+                <div class="row"><div class="price">$31<small>Launch price</small></div><button type="button" class="btn btn-card add-btn" data-name="Elantra N Hoodie" data-price="31" data-store="Fourthwall">Add to cart</button></div>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="art poster"><span class="tag">276 hp</span><img src="assets/poster_elantra_n.jpg" alt="Elantra N poster: the white Elantra N on a desert road above the words ELANTRA N — 2.0L Turbo · 276 HP" loading="lazy" /></div>
+              <div class="body">
+                <h3>“Elantra N” Poster</h3>
+                <p class="desc">The Elantra N, garage-wall size — the car with its headline specs in the print: 2.0L turbo, 276 hp. 12″ × 18″.</p>
+                <div class="row"><div class="price">$31<small>Launch price</small></div><button type="button" class="btn btn-card add-btn" data-name="Elantra N Poster" data-price="31" data-store="Fourthwall">Add to cart</button></div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="view" id="view-p993">
+      <section style="padding-top: 44px;">
+        <figure class="view-hero"><img src="assets/porsche_993.jpg" alt="Silver Porsche 911 Carrera S (993 generation), front three-quarter photo" /></figure>
+        <div class="car-panel">
+          <div class="photo"><img src="assets/porsche_993.jpg" alt="Silver Porsche 911 Carrera S (993 generation), front three-quarter photo" /></div>
+          <div class="txt">
+            <span class="tag" style="position: static;">New in the garage · Kimmi's favorite</span>
+            <h2>Porsche 911 <span class="y">(993)</span></h2>
+            <p><strong>The last air-cooled king.</strong> In 1998, Porsche ended an era. The 993 was the last 911 with an air-cooled engine — hand-finished in Zuffenhausen, the final chapter of a design that traced back to 1963. Carrera, Turbo, all of them are analog in a way cars will never be again.</p>
+            <p>Eli already told this car's story on the channel — <strong>“The Last Air-Cooled King”</strong> — and there's a personal reason it's in this garage: it's <strong>Kimmi's favorite car</strong>, and Eli put it here for her — “ur fav.”</p>
+            <div class="facts">
+              <div class="fact"><span class="k">Engine</span><span class="v">3.6L air-cooled flat-six</span></div>
+              <div class="fact"><span class="k">Carrera</span><span class="v">272–285 PS</span></div>
+              <div class="fact"><span class="k">Turbo</span><span class="v">408 PS</span></div>
+              <div class="fact"><span class="k">Built</span><span class="v">1994–1998</span></div>
+              <div class="fact"><span class="k">Claim to fame</span><span class="v">Last air-cooled 911</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="car-merch">
+          <div class="sec-head"><h2 style="font-size: clamp(26px, 4vw, 36px);">993 Merch</h2><span class="count">Tee · Hoodie · Poster · $39.93 each</span></div>
+          <p class="sec-sub">The last air-cooled 911 in print — 3.6L air-cooled flat-six, with the headline specs in the design. Priced at $39.93: the model number hiding in the price. Original artwork, no brand logos.</p>
+          <div class="grid">
+            <article class="card">
+              <div class="art fill"><span class="tag">Last air-cooled</span><img src="assets/design_993.jpg" alt="993 tee design: the silver 993-generation 911 above the words 993 — 3.6L Air-Cooled Flat-Six · Last Air-Cooled 911" loading="lazy" /></div>
+              <div class="body">
+                <h3>“993” Tee</h3>
+                <p class="desc">The last air-cooled king in full color — 3.6L air-cooled flat-six. Channel badge on the front, the 993 graphic on the back. Printed on black.</p>
+                <div class="row"><div class="price">$39.93<small>Launch price</small></div><button type="button" class="btn btn-card add-btn" data-name="993 Tee" data-price="39.93" data-store="Fourthwall">Add to cart</button></div>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="art fill"><span class="tag">Last air-cooled</span><img src="assets/design_993.jpg" alt="993 hoodie design: the silver 993-generation 911 above the words 993 — 3.6L Air-Cooled Flat-Six · Last Air-Cooled 911" loading="lazy" /></div>
+              <div class="body">
+                <h3>“993” Hoodie</h3>
+                <p class="desc">The last air-cooled king in full color — 3.6L air-cooled flat-six. Channel badge on the front, the 993 graphic on the back, on a pullover hoodie. Printed on black.</p>
+                <div class="row"><div class="price">$39.93<small>Launch price</small></div><button type="button" class="btn btn-card add-btn" data-name="993 Hoodie" data-price="39.93" data-store="Fourthwall">Add to cart</button></div>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="art poster"><span class="tag">Last air-cooled</span><img src="assets/poster_993.jpg" alt="993 poster: the silver 993-generation 911 above the words 993 — 3.6L Air-Cooled Flat-Six · Last Air-Cooled 911" loading="lazy" /></div>
+              <div class="body">
+                <h3>“993” Poster</h3>
+                <p class="desc">The 993, garage-wall size — the last air-cooled 911 with its headline specs in the print: 3.6L air-cooled flat-six. 12″ × 18″.</p>
+                <div class="row"><div class="price">$39.93<small>Launch price</small></div><button type="button" class="btn btn-card add-btn" data-name="993 Poster" data-price="39.93" data-store="Fourthwall">Add to cart</button></div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="view" id="view-epique">
+      <section style="padding-top: 44px;">
+        <figure class="view-hero"><img src="assets/epique_gt1.jpg" alt="De Macross Epique GT1 prototype in cream and white with a number 1 roundel, front three-quarter photo" /></figure>
+        <div class="car-panel">
+          <div class="photo"><img src="assets/epique_gt1.jpg" alt="De Macross Epique GT1 prototype in cream and white with a number 1 roundel, front three-quarter photo" /></div>
+          <div class="txt">
+            <span class="tag" style="position: static;">New in the garage · 1 of 1 prototype</span>
+            <h2>De Macross <span class="y">Epique GT1</span></h2>
+            <p><strong>The ghost.</strong> Korea tried to build a supercar twice — and almost nobody knows about the second one. In 2009, Korean businessman <strong>Jahong Hur</strong> founded De Macross and hired Canada's <strong>Multimatic</strong> to engineer his dream: a hand-formed aluminum body, gullwing doors, and a supercharged Ford V8 built by Roush Yates, <strong>claimed at 845 hp</strong> by the manufacturer.</p>
+            <p>It debuted at the <strong>Dubai Motor Show in 2011</strong> to real headlines. Then it vanished. Production never happened. Exactly one Epique GT1 exists — a <strong>1-of-1 prototype</strong>, the ghost of Korean supercars.</p>
+            <div class="facts">
+              <div class="fact"><span class="k">Engine</span><span class="v">5.4L supercharged Ford V8 · Roush Yates</span></div>
+              <div class="fact"><span class="k">Power</span><span class="v">845 hp — manufacturer claim</span></div>
+              <div class="fact"><span class="k">Gearbox</span><span class="v">Ricardo 6-speed manual</span></div>
+              <div class="fact"><span class="k">Debut</span><span class="v">Dubai Motor Show, 2011</span></div>
+              <div class="fact"><span class="k">Ever built</span><span class="v">1 — prototype only</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="car-merch">
+          <div class="sec-head"><h2 style="font-size: clamp(26px, 4vw, 36px);">Epique GT1 Merch</h2><span class="count">Tee · Hoodie · Poster · $84.50 each</span></div>
+          <p class="sec-sub">The ghost in print — 5.4L supercharged V8, with the 845 hp manufacturer claim in the design. Priced at $84.50: the 845, as a price. Original artwork, no brand logos.</p>
+          <div class="grid">
+            <article class="card">
+              <div class="art fill"><span class="tag">1 of 1 prototype</span><img src="assets/design_epique_gt1.jpg" alt="Epique GT1 tee design: the cream and white Epique GT1 prototype above the words EPIQUE GT1 — 5.4L Supercharged V8 · 845 HP — Manufacturer Claim" loading="lazy" /></div>
+              <div class="body">
+                <h3>“Epique GT1” Tee</h3>
+                <p class="desc">The ghost in full color — 5.4L supercharged V8, 845 hp as claimed by the manufacturer. Channel badge on the front, the Epique GT1 graphic on the back. Printed on black.</p>
+                <div class="row"><div class="price">$84.50<small>Launch price</small></div><button type="button" class="btn btn-card add-btn" data-name="Epique GT1 Tee" data-price="84.50" data-store="Fourthwall">Add to cart</button></div>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="art fill"><span class="tag">1 of 1 prototype</span><img src="assets/design_epique_gt1.jpg" alt="Epique GT1 hoodie design: the cream and white Epique GT1 prototype above the words EPIQUE GT1 — 5.4L Supercharged V8 · 845 HP — Manufacturer Claim" loading="lazy" /></div>
+              <div class="body">
+                <h3>“Epique GT1” Hoodie</h3>
+                <p class="desc">The ghost in full color — 5.4L supercharged V8, 845 hp as claimed by the manufacturer. Channel badge on the front, the Epique GT1 graphic on the back, on a pullover hoodie. Printed on black.</p>
+                <div class="row"><div class="price">$84.50<small>Launch price</small></div><button type="button" class="btn btn-card add-btn" data-name="Epique GT1 Hoodie" data-price="84.50" data-store="Fourthwall">Add to cart</button></div>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="art poster"><span class="tag">1 of 1 prototype</span><img src="assets/poster_epique_gt1.jpg" alt="Epique GT1 poster: the cream and white Epique GT1 prototype above the words EPIQUE GT1 — 5.4L Supercharged V8 · 845 HP — Manufacturer Claim" loading="lazy" /></div>
+              <div class="body">
+                <h3>“Epique GT1” Poster</h3>
+                <p class="desc">The Epique GT1, garage-wall size — 5.4L supercharged V8 with the 845 hp manufacturer claim in the print. 12″ × 18″.</p>
+                <div class="row"><div class="price">$84.50<small>Launch price</small></div><button type="button" class="btn btn-card add-btn" data-name="Epique GT1 Poster" data-price="84.50" data-store="Fourthwall">Add to cart</button></div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    </main>
+
+    <footer>
+      <div class="wrap">
+        <div class="brand">Sanghyeok’s 차고 <span>(Eli's Garage)</span></div>
+        <nav>
+          <a href="#top" data-view-link="home">Home</a>
+          <a href="#cregit" data-view-link="cregit">CREGiT &amp; Spirra</a>
+          <a href="#iconic" data-view-link="iconic">Iconic 2.0</a>
+          <a href="#elantra" data-view-link="elantra">Elantra N</a>
+          <a href="#p993" data-view-link="p993">993</a>
+          <a href="#epique" data-view-link="epique">Epique GT1</a>
+          <a href="https://www.youtube.com/@Eli_kim12" target="_blank" rel="noopener">YouTube — @Eli_kim12 ↗</a>
+        </nav>
+        <p class="fine">Sanghyeok’s 차고 (Eli's Garage) · Original designs only — our art, our photos, our words. Every purchase funds The Hunt: the 1-of-1 CREGiT Spirra, Daegu → Houston.</p>
+      </div>
+    </footer>
+
+    <!-- ============ CART ============ -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <aside class="cart-panel" id="cartPanel" role="dialog" aria-modal="true" aria-label="Shopping cart" hidden>
+      <div class="cart-head">
+        <h2>Your cart</h2>
+        <button type="button" class="cart-close" id="cartClose" aria-label="Close cart">✕</button>
+      </div>
+      <div class="cart-items" id="cartItems">
+        <p class="cart-empty">Your cart is empty — add some gear and it will show up here.</p>
+      </div>
+      <div class="cart-foot">
+        <div class="cart-total"><span>Total</span><b id="cartTotal">$0.00</b></div>
+        <div class="cart-checkout" id="cartCheckout"></div>
+        <p class="cart-note">This cart is a list-builder for this page — checkout finishes at the stores. Tees, posters, stickers, diecast, and bundles check out on Fourthwall; phone cases and license plate frames check out on Printify.</p>
+        <button type="button" class="cart-clear" id="cartClear">Clear cart</button>
+      </div>
+    </aside>
+
+    <script>
+      (function () {
+        var cart = {}; // name -> { name, price, store, qty }
+        var panel = document.getElementById('cartPanel');
+        var overlay = document.getElementById('cartOverlay');
+        var itemsEl = document.getElementById('cartItems');
+        var totalEl = document.getElementById('cartTotal');
+        var countEl = document.getElementById('cartCount');
+        var checkoutEl = document.getElementById('cartCheckout');
+
+        // Each store group in the cart gets its own checkout button, straight
+        // to that store — Fourthwall first, then Printify.
+        var STORE_ORDER = ['Fourthwall', 'Printify'];
+        var STORE_URLS = {
+          'Fourthwall': 'https://eli-vok-shop.fourthwall.com',
+          'Printify': 'https://elis-garage.printify.me'
+        };
+        var STORE_BTN = {
+          'Fourthwall': 'btn btn-yellow',
+          'Printify': 'btn btn-printify'
+        };
+
+        function money(n) { return '$' + n.toFixed(2); }
+
+        function render() {
+          var names = Object.keys(cart);
+          var count = 0, total = 0;
+          names.forEach(function (k) { count += cart[k].qty; total += cart[k].qty * cart[k].price; });
+          countEl.textContent = count;
+          totalEl.textContent = money(total);
+          if (!names.length) {
+            itemsEl.innerHTML = '<p class="cart-empty">Your cart is empty — add some gear and it will show up here.</p>';
+            checkoutEl.innerHTML = '';
+            return;
+          }
+          // Group the items by store so each store's gear sits together and
+          // checks out with a single tap to that store.
+          var groups = [];
+          var byStore = {};
+          names.forEach(function (k) {
+            var s = cart[k].store;
+            if (!byStore[s]) { byStore[s] = []; groups.push(s); }
+            byStore[s].push(k);
+          });
+          groups.sort(function (a, b) {
+            var ia = STORE_ORDER.indexOf(a); if (ia === -1) ia = STORE_ORDER.length;
+            var ib = STORE_ORDER.indexOf(b); if (ib === -1) ib = STORE_ORDER.length;
+            return ia - ib;
+          });
+          itemsEl.innerHTML = groups.map(function (s) {
+            var subtotal = 0;
+            var itemsHtml = byStore[s].map(function (k) {
+              var it = cart[k];
+              subtotal += it.price * it.qty;
+              return '<div class="cart-item">' +
+                '<div class="ci-top"><span class="ci-name">' + it.name + '</span><span class="ci-line">' + money(it.price * it.qty) + '</span></div>' +
+                '<div class="ci-meta">' + money(it.price) + ' each · ' + it.store + '</div>' +
+                '<div class="ci-controls">' +
+                  '<button type="button" class="qty-btn" data-act="dec" data-name="' + it.name + '" aria-label="Decrease quantity">−</button>' +
+                  '<span class="ci-qty">' + it.qty + '</span>' +
+                  '<button type="button" class="qty-btn" data-act="inc" data-name="' + it.name + '" aria-label="Increase quantity">+</button>' +
+                  '<button type="button" class="ci-remove" data-act="remove" data-name="' + it.name + '">Remove</button>' +
+                '</div></div>';
+            }).join('');
+            return '<div class="cart-group-head"><span>' + s + '</span><b>' + money(subtotal) + '</b></div>' + itemsHtml;
+          }).join('');
+          checkoutEl.innerHTML = groups.filter(function (s) { return STORE_URLS[s]; }).map(function (s) {
+            return '<a class="' + (STORE_BTN[s] || 'btn btn-printify') + '" href="' + STORE_URLS[s] + '" target="_blank" rel="noopener">Checkout at ' + s + ' →</a>';
+          }).join('');
+        }
+
+        var closeTimer = null;
+        function openCart() {
+          if (closeTimer) { clearTimeout(closeTimer); closeTimer = null; }
+          panel.hidden = false;
+          void panel.offsetWidth; // flush layout so the slide-in transition runs
+          panel.classList.add('open'); overlay.classList.add('open');
+          document.body.style.overflow = 'hidden';
+          document.getElementById('cartClose').focus();
+        }
+        function closeCart() {
+          panel.classList.remove('open'); overlay.classList.remove('open');
+          document.body.style.overflow = '';
+          closeTimer = setTimeout(function () { panel.hidden = true; }, 280);
+        }
+
+        document.addEventListener('click', function (e) {
+          var add = e.target.closest('.add-btn');
+          if (add) {
+            var name = add.getAttribute('data-name');
+            var price = parseFloat(add.getAttribute('data-price'));
+            var store = add.getAttribute('data-store') || 'Fourthwall';
+            if (!cart[name]) cart[name] = { name: name, price: price, store: store, qty: 0 };
+            cart[name].qty += 1;
+            render();
+            var original = add.textContent;
+            add.textContent = 'Added ✓';
+            add.classList.add('added');
+            setTimeout(function () { add.textContent = original; add.classList.remove('added'); }, 1200);
+            return;
+          }
+          var ctl = e.target.closest('[data-act]');
+          if (ctl && panel.contains(ctl)) {
+            var n = ctl.getAttribute('data-name');
+            if (!cart[n]) return;
+            var act = ctl.getAttribute('data-act');
+            if (act === 'inc') cart[n].qty += 1;
+            if (act === 'dec') { cart[n].qty -= 1; if (cart[n].qty <= 0) delete cart[n]; }
+            if (act === 'remove') delete cart[n];
+            render();
+          }
+        });
+
+        document.getElementById('cartBtn').addEventListener('click', openCart);
+        document.getElementById('cartClose').addEventListener('click', closeCart);
+        overlay.addEventListener('click', closeCart);
+        document.getElementById('cartClear').addEventListener('click', function () { cart = {}; render(); });
+        document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeCart(); });
+
+        render();
+      })();
+    </script>
+    <script>
+      // Car tabs: switch in-page views (home intro + one view per car).
+      // The cart lives outside the views, so it keeps working across all of them.
+      (function () {
+        var views = document.querySelectorAll('.view');
+        var tabs = document.querySelectorAll('.tab-btn');
+        var hero = document.querySelector('.hero');
+        if (!views.length) return;
+        function show(name, scrollId) {
+          if (hero) hero.style.display = name === 'home' ? '' : 'none';
+          views.forEach(function (v) { v.classList.toggle('active', v.id === 'view-' + name); });
+          tabs.forEach(function (t) {
+            var on = t.getAttribute('data-view') === name;
+            t.classList.toggle('active', on);
+            t.setAttribute('aria-selected', on ? 'true' : 'false');
+          });
+          if (scrollId) {
+            var el = document.getElementById(scrollId);
+            if (el) { el.scrollIntoView(); return; }
+          }
+          window.scrollTo(0, 0);
+        }
+        tabs.forEach(function (t) {
+          t.addEventListener('click', function () { show(t.getAttribute('data-view')); });
+        });
+        document.querySelectorAll('[data-view-link]').forEach(function (link) {
+          link.addEventListener('click', function (e) {
+            e.preventDefault();
+            show(link.getAttribute('data-view-link'), link.getAttribute('data-scroll'));
+          });
+        });
+      })();
+    </script>
+    <script>
+      // Iconic 2.0 Diecast version switch: Carbon ($165) / Yellow ($145).
+      // Swaps the card image and price, and points the Add to Cart button at
+      // the selected version so the cart names and charges it correctly.
+      (function () {
+        var versions = {
+          carbon: {
+            label: 'Carbon', price: 165,
+            img: 'assets/diecast_iconic20_carbon_photo.jpg',
+            alt: 'Iconic 2.0 Diecast — Carbon version: the real carbon-fiber Spirra Iconic 2.0 show car the 3D-printed diecast is modeled on'
+          },
+          yellow: {
+            label: 'Yellow', price: 145,
+            img: 'assets/diecast_iconic20_yellow_photo.jpg',
+            alt: 'Iconic 2.0 Diecast — Yellow version: the real yellow Spirra Iconic 2.0 on the road, the car the 3D-printed diecast is modeled on'
+          }
+        };
+        var img = document.getElementById('iconicDiecastImg');
+        var priceEl = document.getElementById('iconicDiecastPrice');
+        var addBtn = document.getElementById('iconicDiecastAdd');
+        var btns = document.querySelectorAll('#iconicDiecastCard .version-btn');
+        if (!img || !priceEl || !addBtn || !btns.length) return;
+        function select(key) {
+          var v = versions[key];
+          if (!v) return;
+          img.src = v.img;
+          img.alt = v.alt;
+          priceEl.textContent = '$' + v.price;
+          addBtn.setAttribute('data-name', 'Iconic 2.0 Diecast — ' + v.label);
+          addBtn.setAttribute('data-price', String(v.price));
+          btns.forEach(function (b) {
+            var on = b.getAttribute('data-version') === key;
+            b.classList.toggle('active', on);
+            b.setAttribute('aria-pressed', on ? 'true' : 'false');
+          });
+        }
+        btns.forEach(function (b) {
+          b.addEventListener('click', function () { select(b.getAttribute('data-version')); });
+        });
+      })();
+    </script>
+    <script>
+      // Diecast style switches on the CREGiT & Spirra tab. Each car shows
+      // ONE combined photo with both styles side by side; the style buttons
+      // sit directly under the photo and pick the price. Original Diecast:
+      // Normal ($131) / CREGiT ($131.31). Race Car Diecast: Yellow GTM
+      // ($331) / #11 GTM ($331.31). Selecting a style visibly changes the
+      // price, updates the "Selected:" caption, and points the Add to Cart
+      // button at that style so the cart records it as its own line.
+      (function () {
+        function fmt(n) { return '$' + (Number.isInteger(n) ? String(n) : n.toFixed(2)); }
+        function wire(cardId, priceId, captionId, addId, styles) {
+          var card = document.getElementById(cardId);
+          var priceEl = document.getElementById(priceId);
+          var captionEl = document.getElementById(captionId);
+          var addBtn = document.getElementById(addId);
+          if (!card || !priceEl || !captionEl || !addBtn) return;
+          var btns = card.querySelectorAll('.version-btn');
+          function select(key) {
+            var s = styles[key];
+            if (!s) return;
+            priceEl.textContent = fmt(s.price);
+            captionEl.textContent = 'Selected: ' + s.caption;
+            addBtn.setAttribute('data-name', s.name);
+            addBtn.setAttribute('data-price', String(s.price));
+            btns.forEach(function (b) {
+              var on = b.getAttribute('data-style') === key;
+              b.classList.toggle('active', on);
+              b.setAttribute('aria-pressed', on ? 'true' : 'false');
+            });
+          }
+          btns.forEach(function (b) {
+            b.addEventListener('click', function () { select(b.getAttribute('data-style')); });
+          });
+        }
+        wire('originalDiecastCard', 'originalDiecastPrice', 'originalDiecastCaption', 'originalDiecastAdd', {
+          normal: { name: 'Original Diecast — Normal', price: 131, caption: 'Normal style' },
+          cregit: { name: 'Original Diecast — CREGiT', price: 131.31, caption: 'CREGiT style' }
+        });
+        wire('raceDiecastCard', 'raceDiecastPrice', 'raceDiecastCaption', 'raceDiecastAdd', {
+          yellowgtm: { name: 'Race Car Diecast — Yellow GTM', price: 331, caption: 'Yellow GTM style' },
+          gtm11: { name: 'Race Car Diecast — #11 GTM', price: 331.31, caption: '#11 GTM style' }
+        });
+      })();
+    </script>
+  </body>
+</html>
