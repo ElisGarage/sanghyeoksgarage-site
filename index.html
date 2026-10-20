@@ -4,6 +4,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="color-scheme" content="light dark" />
+    <link rel="manifest" href="/manifest.webmanifest">
+    <meta name="theme-color" content="#000000">
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Eli's Garage">
     <link rel="icon" href="data:," />
     <title>Sanghyeok’s 차고 (Eli's Garage) — Korea's Forgotten Supercar Merch</title>
     <meta name="description" content="Sanghyeok’s 차고 (Eli's Garage) merch: tees, posters, stickers, diecast, phone cases, and license plate frames celebrating the Oullim Spirra — Korea's forgotten supercar. Every purchase funds The Hunt: the 1-of-1 CREGiT Spirra, Daegu to Houston." />
@@ -1472,6 +1479,82 @@
           yellowgtm: { name: 'Race Car Diecast — Yellow GTM', price: 331, caption: 'Yellow GTM style' },
           gtm11: { name: 'Race Car Diecast — #11 GTM', price: 331.31, caption: '#11 GTM style' }
         });
+      })();
+    </script>
+    <script>
+      // PWA: register the service worker and offer a subtle install
+      // affordance in the footer — a one-tap button on Chrome (driven by
+      // beforeinstallprompt), or a static hint on iOS Safari. Neither shows
+      // when the site is already installed / running standalone.
+      (function () {
+        if ('serviceWorker' in navigator) { navigator.serviceWorker.register('/sw.js').catch(function(){}); }
+
+        var isStandalone = (window.matchMedia && window.matchMedia('(display-mode: standalone)').matches) || window.navigator.standalone === true;
+        if (isStandalone) return;
+
+        var footerWrap = document.querySelector('footer .wrap') || document.querySelector('footer');
+        if (!footerWrap) return;
+
+        var installBtn = document.createElement('button');
+        installBtn.type = 'button';
+        installBtn.id = 'pwaInstallBtn';
+        installBtn.textContent = "📲 GET THE APP — add Eli's Garage to your home screen";
+        installBtn.hidden = true;
+        installBtn.setAttribute('style', 'display:none;width:100%;margin:10px 0 0;padding:9px 14px;background:#0a0a0b;color:#FAC814;border:1px solid rgba(250,200,20,0.45);border-radius:6px;cursor:pointer;font-family:"Barlow Condensed",sans-serif;font-weight:700;font-size:16px;letter-spacing:0.08em;text-transform:uppercase;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:center;');
+
+        var iosHint = document.createElement('p');
+        iosHint.id = 'pwaIosHint';
+        iosHint.textContent = 'On iPhone: Share → Add to Home Screen 📲';
+        iosHint.hidden = true;
+        iosHint.setAttribute('style', 'display:none;width:100%;margin:10px 0 0;padding:2px 0;color:#FAC814;font-family:"Barlow Condensed",sans-serif;font-weight:600;font-size:15px;letter-spacing:0.08em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:center;');
+
+        footerWrap.appendChild(installBtn);
+        footerWrap.appendChild(iosHint);
+
+        var deferredPrompt = null;
+        function showInstallBtn() {
+          iosHint.hidden = true; iosHint.style.display = 'none';
+          installBtn.hidden = false; installBtn.style.display = 'block';
+        }
+        function hideInstallBtn() {
+          installBtn.hidden = true; installBtn.style.display = 'none';
+        }
+
+        window.addEventListener('beforeinstallprompt', function (e) {
+          e.preventDefault();
+          deferredPrompt = e;
+          if (!isStandalone) showInstallBtn();
+        });
+
+        installBtn.addEventListener('click', function () {
+          if (!deferredPrompt) { hideInstallBtn(); return; }
+          var promptEvent = deferredPrompt;
+          deferredPrompt = null;
+          try { promptEvent.prompt(); } catch (err) {}
+          if (promptEvent.userChoice) {
+            promptEvent.userChoice.then(function (choice) {
+              console.log('PWA install prompt outcome:', choice && choice.outcome);
+              hideInstallBtn();
+            }).catch(function () { hideInstallBtn(); });
+          } else {
+            hideInstallBtn();
+          }
+        });
+
+        window.addEventListener('appinstalled', function () {
+          deferredPrompt = null;
+          hideInstallBtn();
+          iosHint.hidden = true; iosHint.style.display = 'none';
+        });
+
+        // iOS Safari: no beforeinstallprompt — show the static hint instead.
+        var ua = window.navigator.userAgent || '';
+        var isIOS = /iPhone|iPad|iPod/.test(ua);
+        var isSafari = /Safari/.test(ua) && !/CriOS|FxiOS|EdgiOS|Chrome|Chromium/.test(ua);
+        var hasInstallPromptSupport = 'onbeforeinstallprompt' in window;
+        if (isIOS && isSafari && !hasInstallPromptSupport && !deferredPrompt) {
+          iosHint.hidden = false; iosHint.style.display = 'block';
+        }
       })();
     </script>
   </body>
