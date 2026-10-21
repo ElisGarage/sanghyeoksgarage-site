@@ -4,9 +4,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="color-scheme" content="light dark" />
-    <link rel="manifest" href="/manifest.webmanifest">
+    <link rel="manifest" href="assets/manifest.webmanifest">
     <meta name="theme-color" content="#000000">
-    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -343,7 +343,7 @@
       .ideas .dot { flex: none; width: 10px; height: 10px; border-radius: 50%; background: var(--accent); }
       .ideas .status {
         margin-left: auto; flex: none;
-        font-size: 12.5px; font-weight: 700; letter-spacing: 0.16em; color: var(--ink-3);
+        font-size: 12.5px; font-weight: 700; letter-spacing: 0.08em; color: var(--ink-3);
       }
       .card.featured { border: 2px solid var(--accent); }
       #bundles .grid, #diecast .grid { grid-template-columns: repeat(2, 1fr); }
@@ -399,6 +399,47 @@
       footer nav a { font-family: "Barlow Condensed", sans-serif; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; color: var(--ink-2); font-size: 16px; }
       footer nav a:hover { color: var(--accent); }
       footer .fine { width: 100%; color: var(--ink-3); font-size: 14px; margin: 6px 0 0; }
+
+      /* ---------- hunt fund: zero state ---------- */
+      .fund-first {
+        font-family: "Anton", sans-serif; font-weight: 400; text-transform: uppercase;
+        font-size: clamp(24px, 4vw, 34px); letter-spacing: 0.02em; color: var(--accent);
+        border: 1.5px dashed rgba(250, 200, 20, 0.55); border-radius: 10px;
+        padding: 16px 20px; text-align: center; margin: 4px 0 0; line-height: 1.15;
+      }
+
+      /* ---------- preorder note (diecast + bundles) ---------- */
+      .preorder-note { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin: 0; font-size: 15.5px; color: var(--ink-2); }
+      .preorder-note .po-tag {
+        font-family: "Barlow Condensed", sans-serif; font-weight: 700; font-size: 14px;
+        letter-spacing: 0.16em; text-transform: uppercase;
+        background: #ff8a1f; color: #211304; padding: 4px 10px; border-radius: 5px;
+      }
+
+      /* ---------- drop alerts signup ---------- */
+      .drop-alerts { margin-top: 56px; }
+      .drop-alerts .panel {
+        background: var(--panel); border: 1px solid var(--panel-line); border-top: 4px solid var(--accent);
+        border-radius: 14px; padding: 36px 34px; text-align: center; box-shadow: var(--shadow);
+      }
+      .drop-alerts h2 { font-family: "Anton", sans-serif; font-weight: 400; text-transform: uppercase; font-size: clamp(30px, 5vw, 42px); margin: 0 0 8px; line-height: 1.02; }
+      .drop-alerts h2 .y { color: var(--accent); }
+      @media (prefers-color-scheme: light) { .drop-alerts h2 .y { color: #9a7b00; } }
+      .drop-alerts .sub { color: var(--ink-2); max-width: 520px; margin: 0 auto 22px; }
+      .alerts-form { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; max-width: 540px; margin: 0 auto; }
+      .alerts-form[hidden] { display: none; }
+      .alerts-form input {
+        flex: 1 1 250px; min-width: 0; padding: 13px 16px; border-radius: 6px;
+        font: inherit; font-size: 16px;
+        border: 2px solid var(--panel-line); background: var(--bg); color: var(--ink);
+      }
+      .alerts-form input:focus { outline: none; border-color: var(--accent); }
+      .alerts-done {
+        font-family: "Barlow Condensed", sans-serif; font-weight: 700; font-size: 21px;
+        letter-spacing: 0.04em; color: var(--ink); margin: 4px auto 0;
+      }
+      .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+      .cart-note.pre-checkout { margin: 0 0 12px; }
 
       /* ---------- printify gear ---------- */
       .card .art.frame { aspect-ratio: 3661 / 1890; background: #0a0a0b; }
@@ -524,6 +565,8 @@
         <nav class="topnav">
           <a href="#top" data-view-link="home">Home</a>
           <a class="yt" href="https://www.youtube.com/@Eli_kim12" target="_blank" rel="noopener">YouTube ↗</a>
+          <a class="yt" href="https://www.tiktok.com/@elikim48" target="_blank" rel="noopener">TikTok ↗</a>
+          <a class="yt" href="https://www.instagram.com/sleepygameers" target="_blank" rel="noopener">Instagram ↗</a>
         </nav>
         <button type="button" class="cart-btn" id="cartBtn" aria-haspopup="dialog" aria-controls="cartPanel">Cart <span class="cart-count" id="cartCount">0</span></button>
       </div>
@@ -549,7 +592,7 @@
           <a class="btn btn-ghost" href="https://www.youtube.com/@Eli_kim12" target="_blank" rel="noopener">Watch the hunt ↗</a>
         </div>
         <div class="stats">
-          <div class="stat"><b>31</b><span>Model made only</span></div>
+          <div class="stat"><b>31</b><span>Spirras ever made</span></div>
           <div class="stat"><b>1 of 1</b><span>CREGiT Spirra exists</span></div>
           <div class="stat"><b>470 hp</b><span>The CREGiT's output</span></div>
           <div class="stat"><b>₩109M</b><span>The CREGiT's asking price</span></div>
@@ -583,8 +626,8 @@
       <section class="hunt-fund-section" id="hunt-fund" aria-label="The Hunt Fund tracker">
         <div class="hunt-fund">
           <h2>The <span class="y">Hunt Fund</span></h2>
-          <p class="fund-figures"><b>$0</b> raised of $137,000</p>
-          <div class="fund-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="137000" aria-label="Hunt Fund progress: $0 raised of $137,000"><div class="fund-fill"></div></div>
+          <p class="fund-figures"><b>$0</b> raised of $137,000 goal</p>
+          <p class="fund-first">Be the first to fund the Hunt</p>
           <div class="fund-targets">
             <p>TARGET NO. 1 — THE 1-OF-1 CREGIT · <span class="amt">≈ $88,000 landed</span></p>
             <p>TARGET NO. 2 — SPIRRA ICONIC 2.0 · <span class="amt">≈ $49,000 landed</span></p>
@@ -647,6 +690,7 @@
             <div class="art fill"><span class="tag">Level 1</span><img src="assets/diecast_red_1of31.jpg" alt="Original Diecast included in the Level 1 bundle: red Spirra model in a clear case on a carbon base" loading="lazy" /></div>
             <div class="body">
               <h3>Sticker + Shirt + Diecast</h3>
+              <p class="preorder-note"><span class="po-tag">Preorder</span> Ships when the first batch of 31 is finished.</p>
               <ul class="bundle-list">
                 <li><strong>Sticker</strong> — Sticker Pack ($3.10 tier)</li>
                 <li><strong>Shirt</strong> — any tee, $31</li>
@@ -660,6 +704,7 @@
             <div class="art fill"><span class="tag">Level 2 · Everything</span><img src="assets/diecast_gtm_carbon.jpg" alt="Race Car Diecast included in the Everything Bundle: yellow #11 Oullim Racing GTM diecast model presented in a carbon display case" loading="lazy" /></div>
             <div class="body">
               <h3>Everything Bundle</h3>
+              <p class="preorder-note"><span class="po-tag">Preorder</span> Ships when the first batch of 31 is finished.</p>
               <ul class="bundle-list">
                 <li><strong>Sticker</strong> — Sticker Pack + decals + keychain ($3.10 tier)</li>
                 <li><strong>Shirt</strong> — any tee, $31</li>
@@ -705,24 +750,6 @@
         </div>
       </section>
 
-      <!-- ============ IDEAS ============ -->
-      <section id="ideas">
-        <div class="sec-head"><h2>On the drawing board</h2><span class="count">Product ideas · next drops</span></div>
-        <p class="sec-sub">Everything on this board is in the shop now. The tees, keychain, and decals are in the shop above — regular merch is $31 flat, with decals and the keychain at $3.10 each. Every idea on the list made it in.</p>
-        <ul class="ideas">
-          <li><span class="dot"></span>Yellow CREGiT car tees<span class="status">In the shop · $31</span></li>
-          <li><span class="dot"></span>Red Spirra S tees<span class="status">In the shop · $31</span></li>
-          <li><span class="dot"></span>6-speed shifter pattern tees<span class="status">In the shop · $31</span></li>
-          <li><span class="dot"></span>Keychains<span class="status">In the shop · $3.10</span></li>
-          <li><span class="dot"></span>Phone cases<span class="status">In the shop · $31</span></li>
-          <li><span class="dot"></span>Mugs<span class="status">In the shop · $31</span></li>
-          <li><span class="dot"></span>Hoodies<span class="status">In the shop · $31</span></li>
-          <li><span class="dot"></span>License plate frames<span class="status">In the shop · $31</span></li>
-          <li><span class="dot"></span>Decals<span class="status">In the shop · $3.10 each</span></li>
-        </ul>
-        <p class="sec-sub" style="margin: 18px 0 0;">Phone cases and license plate frames are sold on Printify: <a href="https://elis-garage.printify.me" target="_blank" rel="noopener">elis-garage.printify.me</a></p>
-      </section>
-
       <!-- ============ DROP NOTE ============ -->
       <div class="drop" id="drop">
         <h2>Build your list, check out at the shops</h2>
@@ -738,7 +765,7 @@
         <div class="sec-head"><h2>The Hunt</h2><span class="count">Target No. 1 · The 1-of-1 CREGiT</span></div>
         <div class="meet" style="grid-template-columns: 1fr;">
           <div>
-            <p>Korea built a supercar and the world barely noticed. The <strong>Spirra</strong> was hand-built in South Korea — a mid-engine, rear-drive machine from a tiny company that refused to accept Korea couldn't make a supercar. Only <strong>31 Spirra S models</strong> were ever made.</p>
+            <p>Korea built a supercar and the world barely noticed. The <strong>Spirra</strong> was hand-built in South Korea — a mid-engine, rear-drive machine from a tiny company that refused to accept Korea couldn't make a supercar. Only <strong>31 Spirras</strong> were ever made.</p>
             <p>And in Daegu, one car sits above them all: a <strong>yellow CREGiT with black stripes, 1,538 km on the clock</strong>, the only one of its kind — <strong>1 of 1</strong>.</p>
             <p>This store exists for one reason: to bring that car home to Houston. Every shirt, every poster, every diecast is a brick in that road.</p>
           </div>
@@ -755,7 +782,7 @@
         <div class="story">
           <div>
             <p>Long before Korea was known for performance cars, a small Korean company called <strong>Oullim</strong> decided to build a supercar by hand. The result was the <strong>Spirra</strong> — a mid-engine machine built in tiny numbers and sold almost entirely at home, which is why most of the world never heard of it.</p>
-            <p>Production stopped at just <strong>31 models made only</strong>. The hotter variants — the T, the EX — are rarer still. And at the very top sits the <strong>CREGiT</strong>: a one-off, 470hp, yellow with black stripes, and the only one ever made. It's sitting in Daegu, South Korea.</p>
+            <p><strong>Only 31 Spirras were ever made.</strong> The hotter variants — the T, the EX — are rarer still. And at the very top sits the <strong>CREGiT</strong>: a one-off, 470hp, yellow with black stripes, and the only one ever made. It's sitting in Daegu, South Korea.</p>
             <p><strong>The Hunt</strong> is Eli's mission to buy that car and bring it to Houston, Texas — documented video by video on the Sanghyeok’s 차고 (Eli's Garage) channel. This store exists for one reason: every tee, poster, and sticker moves the CREGiT fund forward.</p>
           </div>
           <div class="spec-list" aria-label="Spirra lineup specifications">
@@ -764,7 +791,7 @@
             <div class="spec"><span class="k">Spirra T<small>Turbocharged</small></span><span class="v">420 hp</span></div>
             <div class="spec"><span class="k">Spirra EX<small>The flagship</small></span><span class="v">500 hp</span></div>
             <div class="spec"><span class="k">CREGiT<small>1 of 1 · Daegu, KR</small></span><span class="v">470 hp</span></div>
-            <div class="spec"><span class="k">Models made<small>31 model made only</small></span><span class="v">31</span></div>
+            <div class="spec"><span class="k">Models made<small>Only 31 Spirras ever made</small></span><span class="v">31</span></div>
           </div>
         </div>
       </section>
@@ -796,7 +823,7 @@
             <div class="art shirt"><span class="tag">31 each</span><img src="assets/tee_2_only31.png" alt="Only 31 Made tee design with Spirra artwork and the number 31" loading="lazy" /></div>
             <div class="body">
               <h3>“Only 31 Made” Tee</h3>
-              <p class="desc">31 model made only. Ever. Rarer than most hypercars — that's the whole flex.</p>
+              <p class="desc">Only 31 Spirras were ever made. Rarer than most hypercars — that's the whole flex.</p>
               <div class="row"><div class="price">$31<small>Launch price</small></div><button type="button" class="btn btn-card add-btn" data-name="Only 31 Made Tee" data-price="31" data-store="Fourthwall">Add to cart</button></div>
             </div>
           </article>
@@ -805,7 +832,7 @@
             <div class="art shirt"><span class="tag">31 each</span><img src="assets/tee_2_only31.png" alt="Only 31 Made hoodie design with Spirra artwork and the number 31" loading="lazy" /></div>
             <div class="body">
               <h3>“Only 31 Made” Hoodie</h3>
-              <p class="desc">31 model made only. Ever. Channel badge on the front, the Only 31 Made graphic on the back, on a pullover hoodie. Printed on black.</p>
+              <p class="desc">Only 31 Spirras were ever made. Channel badge on the front, the Only 31 Made graphic on the back, on a pullover hoodie. Printed on black.</p>
               <div class="row"><div class="price">$31<small>Launch price</small></div><button type="button" class="btn btn-card add-btn" data-name="Only 31 Made Hoodie" data-price="31" data-store="Fourthwall">Add to cart</button></div>
             </div>
           </article>
@@ -881,7 +908,7 @@
           </article>
 
           <article class="card">
-            <div class="art poster"><img src="assets/poster_3_31.jpg" alt="31 poster: a bold number 31 design marking the 31 models made only" loading="lazy" /></div>
+            <div class="art poster"><img src="assets/poster_3_31.jpg" alt="31 poster: a bold number 31 design — only 31 Spirras were ever made" loading="lazy" /></div>
             <div class="body">
               <h3>“31” Poster</h3>
               <p class="desc">One number says everything you need to know about how rare this car is.</p>
@@ -914,7 +941,8 @@
               </div>
               <p class="style-caption" id="originalDiecastCaption">Selected: Normal style</p>
               <h3>Original Diecast — 31 Made</h3>
-              <p class="desc">The original diecast run: <strong>31 models made only</strong>, matching the 31 real Spirras. Each one individually numbered and presented in a carbon display case.</p>
+              <p class="preorder-note"><span class="po-tag">Preorder</span> Ships when the first batch of 31 is finished.</p>
+              <p class="desc">The original diecast run: <strong>31 models</strong>, matching the real cars — only 31 Spirras were ever made. Each one individually numbered and presented in a carbon display case.</p>
               <div class="row"><div class="price"><span id="originalDiecastPrice">$131</span><small>Launch price</small></div><button type="button" class="btn btn-card add-btn" id="originalDiecastAdd" data-name="Original Diecast — Normal" data-price="131" data-store="Fourthwall">Add to cart</button></div>
             </div>
           </article>
@@ -927,6 +955,7 @@
               </div>
               <p class="style-caption" id="raceDiecastCaption">Selected: Yellow GTM style</p>
               <h3>Race Car Diecast — Only 3 Made</h3>
+              <p class="preorder-note"><span class="po-tag">Preorder</span> Ships when the first batch of 31 is finished.</p>
               <p class="desc">The race car — the <strong>#11 Oullim Racing GTM</strong>. The race car run: <strong>just 3 models</strong>, the rarest thing in the shop. Each one presented in a carbon display case. When the 3 are claimed, this one never comes back.</p>
               <div class="row"><div class="price"><span id="raceDiecastPrice">$331</span><small>Launch price</small></div><button type="button" class="btn btn-card add-btn" id="raceDiecastAdd" data-name="Race Car Diecast — Yellow GTM" data-price="331" data-store="Fourthwall">Add to cart</button></div>
             </div>
@@ -1207,6 +1236,20 @@
 
     </main>
 
+    <!-- ============ DROP ALERTS ============ -->
+    <section class="drop-alerts wrap" aria-label="Get drop alerts">
+      <div class="panel">
+        <h2>Get <span class="y">drop alerts</span></h2>
+        <p class="sub">One email when a new drop lands — new merch, new videos, and Hunt Fund milestones. No spam, ever.</p>
+        <form class="alerts-form" id="dropAlertsForm">
+          <label class="sr-only" for="dropAlertsEmail">Email address</label>
+          <input type="email" id="dropAlertsEmail" name="email" placeholder="you@email.com" autocomplete="email" required />
+          <button type="submit" class="btn btn-yellow">Sign up</button>
+        </form>
+        <p class="alerts-done" id="dropAlertsDone" hidden>You're in — watch your inbox for the next drop.</p>
+      </div>
+    </section>
+
     <footer>
       <div class="wrap">
         <div class="brand">Sanghyeok’s 차고 <span>(Eli's Garage)</span></div>
@@ -1218,6 +1261,8 @@
           <a href="#p993" data-view-link="p993">993</a>
           <a href="#epique" data-view-link="epique">Epique GT1</a>
           <a href="https://www.youtube.com/@Eli_kim12" target="_blank" rel="noopener">YouTube — @Eli_kim12 ↗</a>
+          <a href="https://www.tiktok.com/@elikim48" target="_blank" rel="noopener">TikTok — @elikim48 ↗</a>
+          <a href="https://www.instagram.com/sleepygameers" target="_blank" rel="noopener">Instagram — @sleepygameers ↗</a>
         </nav>
         <p class="fine">Sanghyeok’s 차고 (Eli's Garage) · Original designs only — our art, our photos, our words. Every purchase funds The Hunt: the 1-of-1 CREGiT Spirra, Daegu → Houston.</p>
       </div>
@@ -1235,6 +1280,7 @@
       </div>
       <div class="cart-foot">
         <div class="cart-total"><span>Total</span><b id="cartTotal">$0.00</b></div>
+        <p class="cart-note pre-checkout">Your cart opens at Fourthwall (tees, stickers, diecast) or Printify (phone cases, plate frames) to pay securely.</p>
         <div class="cart-checkout" id="cartCheckout"></div>
         <p class="cart-note">This cart is a list-builder for this page — checkout finishes at the stores. Tees, posters, stickers, diecast, and bundles check out on Fourthwall; phone cases and license plate frames check out on Printify.</p>
         <button type="button" class="cart-clear" id="cartClear">Clear cart</button>
@@ -1555,6 +1601,20 @@
         if (isIOS && isSafari && !hasInstallPromptSupport && !deferredPrompt) {
           iosHint.hidden = false; iosHint.style.display = 'block';
         }
+      })();
+    </script>
+    <script>
+      // Drop alerts signup: this static page has no list server, so the
+      // form confirms in place and keeps the address only in this tab.
+      (function () {
+        var form = document.getElementById('dropAlertsForm');
+        var done = document.getElementById('dropAlertsDone');
+        if (!form || !done) return;
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+          form.hidden = true;
+          done.hidden = false;
+        });
       })();
     </script>
     <script defer src="assets/vercel-insights.js"></script>
